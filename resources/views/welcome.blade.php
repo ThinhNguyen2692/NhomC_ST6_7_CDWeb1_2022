@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -20,7 +21,11 @@
             }
         </style>
     </head>
-    <body class="antialiased">
+    <body class="antialiased preloading">
+    <div  class="loader">
+	<img class="fas fa-spinner icon" src="{{ asset('images/Cube-1s-200px.svg')}}"/>
+
+</div>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -128,5 +133,7 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src=" {{ asset('js/jquery-3.3.1.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
     </body>
 </html>
