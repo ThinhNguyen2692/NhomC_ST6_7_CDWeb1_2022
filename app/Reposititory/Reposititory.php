@@ -20,4 +20,8 @@ class Reposititory implements IReposititory{
     public function findById(int $modelId): ?Model{
         return $this->model->find($modelId);
     }
+
+    public function create($model){
+        $this::create($model);
+    }
 }

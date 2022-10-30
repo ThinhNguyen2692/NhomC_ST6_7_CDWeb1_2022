@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 interface IReposititory{
  public function all(): Collection;
  public function findById(int $modelId): ?Model;
+ public function create($model): ?Model;
 }
-
-

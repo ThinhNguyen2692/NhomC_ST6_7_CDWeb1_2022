@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +16,5 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/user', [UserController::class, 'index']);
+
+Route::get('/', [CustomerController::class, 'index']);

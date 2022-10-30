@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Reposititory\Interface;
+use App\Models\Feedback;
 use App\Reposititory\Interface\IReposititory;
 
 interface IFeedbackReposititory extends IReposititory{
+    public function AddFeedback(Feedback $feedback);
 }
