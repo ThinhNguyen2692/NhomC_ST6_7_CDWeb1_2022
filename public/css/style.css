@@ -90,21 +90,22 @@ footer {
 
 
 
-/* content */
-.form-phanHoi {
-    width: 445px;
-    padding: 20px;
-    margin-left: 34%;
-    border: #000 2px solid;
+
+.modal-body{
+    padding: 3rem !important;
 }
-
-.form-phanHoi input {
-    width: 400px;
+.modal-body input{
+    border: 1px solid #000;
+    border-radius: 5px;
 }
-
-.form-phanHoi .form-title {
-    border-bottom: 2px #000 solid;
+.modal-body .modal-input{
+width: 345px;
 }
-
-
-
+.modal-body .modal-btnClose{
+    width: 130px;
+    margin-left: 35px;
+}
+.modal-body .modal-btnSeen{
+    width: 130px;
+    margin-left: 55px;
+}
