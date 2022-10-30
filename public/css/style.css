@@ -1,73 +1,9 @@
-*{
-	margin: 0;
-	padding: 0;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-	overflow: hidden;
-}
-.content{
-	width: 1170px;
-	margin: auto;
-	margin-top: 30px;
-}
-/*dùng ảnh gif*/
-.load{
-	width: 100%;
-	height: 100%;
-	background: #fff;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 100000000000;
-	display: block;
-	overflow: hidden;
-}
-.load img{
-	width: 150px;
-	height: 150px;
-	position: absolute; 
-	top: 50%;
-	left: 50%;
-	margin-top: -75px;
-	margin-left: -75px;
-}
-/*cách 2 dùng css*/
-.loader{
-	width: 100%;
-	height: 100%;
-	background: hsla(0, 0%, 100%, 0.384);
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 100000000000;
-	display: block;
-	overflow: hidden;
-}
-.icon{
-	font-size: 80px;
-	color: #fff;
-	position: absolute; 
-	top: 50%;
-	left: 50%;
-	margin-top: -40px;
-	margin-left: -40px;
-}
-@-webkit-keyframes xoay{
-	from{
-		-ms-transform:rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
-	to{
-		-ms-transform:rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
-}
+
 
 /* header */
 .header {
@@ -76,16 +12,99 @@ body{
     background: #344563;
     display: inline-flex;
 }
+
 .logo-img {
     margin-left: 100px;
     margin-top: 12px;
 }
 
+/* content */
+
+.food {
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+    border: #000 1px solid;
+
+}
+
+.food-information {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+
+.feedback {
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+
+}
+
+
+
+
+
 /* footer */
 
-footer{
+footer {
     margin-top: 291px;
     width: 100%;
     height: 72px;
     background: #344563;
 }
+
+.user {
+    background-color: #fff;
+    margin: 17px 0 0 70%;
+    border-radius: 10px;
+    width: 10%;
+    height: 45px;
+    position: relative;
+    cursor: pointer;
+}
+
+.user-name {
+    position: absolute;
+    top: 3px;
+    left: 49px;
+    font-size: 13px;
+}
+
+.user-email {
+    position: absolute;
+    top: 20px;
+    font-size: 12px;
+    color: #ccc;
+    left: 48px;
+}
+
+.user-avt {
+    margin-top: 5px;
+    margin-left: 6px;
+}
+
+
+
+
+/* content */
+.form-phanHoi {
+    width: 445px;
+    padding: 20px;
+    margin-left: 34%;
+    border: #000 2px solid;
+}
+
+.form-phanHoi input {
+    width: 400px;
+}
+
+.form-phanHoi .form-title {
+    border-bottom: 2px #000 solid;
+}
+
+
+

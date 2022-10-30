@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-        <title>Laravel</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+        <title>Chăm sóc khách hàng</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,22 +22,21 @@
             }
         </style>
     </head>
-    <body class="antialiased preloading">
-    <div  class="loader">
-	<img class="fas fa-spinner icon" src="{{ asset('images/Cube-1s-200px.svg')}}"/>
-
-</div>
+<body class="antialiased preloading">
 <div class="header">
         <div class="logo-img">
             <img width="70px" height="50px" src="https://banoca.com/wp-content/uploads/2021/03/logo-nha-hang.jpg"
                 alt="">
         </div>
+    </div>
         {{ $slot }}
 
-        <footer>
 
-</footer>
+    <footer>
+
+    </footer>
         <script type="text/javascript" src=" {{ asset('js/jquery-3.3.1.min.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
     </body>
 </html>
