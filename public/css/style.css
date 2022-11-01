@@ -90,13 +90,15 @@ footer {
 
 
 
-
+.title{
+text-transform: uppercase;
+}
 .modal-body{
     padding: 3rem !important;
 }
-.modal-body input{
+input{
     border: 1px solid #000;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 .modal-body .modal-input{
 width: 345px;

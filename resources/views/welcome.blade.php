@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container">
         <div class="content">
-            <div class="content-title h1 text-center pt-5 pb-5">
+            <div class="title h1 text-center pt-5 pb-5">
                 Danh Sách Món Ăn
             </div>
             <div class="food">
@@ -26,13 +26,13 @@
                 </div>
             </div>
             <div class="feedback">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Phản hồi</button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Phản hồi</button>
 
             </div>
         </div>
     </div>
-
-
+    <x-login>
+    </x-login>
 </x-layout>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -45,7 +45,7 @@
             </div>
             <div class="modal-body">
 
-                <h3 class="form-title">Phản hồi</h3>
+                <h3 class="title">Phản hồi</h3>
 
                 <label>Email:</label><br>
                 <input class="modal-input" type="text"> <br><br>
