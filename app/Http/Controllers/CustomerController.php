@@ -20,7 +20,7 @@ class CustomerController extends Controller
     }
 
     public function SendFeedback(Request $request){
-        
+        return $this->busFeedback->SendFeedback($request);
     }
     
 

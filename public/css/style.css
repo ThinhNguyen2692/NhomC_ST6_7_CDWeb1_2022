@@ -90,22 +90,3 @@ footer {
 
 
 
-
-.modal-body{
-    padding: 3rem !important;
-}
-.modal-body input{
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-.modal-body .modal-input{
-width: 345px;
-}
-.modal-body .modal-btnClose{
-    width: 130px;
-    margin-left: 35px;
-}
-.modal-body .modal-btnSeen{
-    width: 130px;
-    margin-left: 55px;
-}

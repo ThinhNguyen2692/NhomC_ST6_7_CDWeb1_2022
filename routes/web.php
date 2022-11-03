@@ -18,3 +18,4 @@ use App\Http\Controllers\LoginController;
 
 
 Route::get('/', [CustomerController::class, 'index']);
+Route::get('/send', [CustomerController::class, 'SendFeedback']);

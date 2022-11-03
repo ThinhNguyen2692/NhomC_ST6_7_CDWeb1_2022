@@ -35,8 +35,15 @@
     <footer>
 
     </footer>
-        <script type="text/javascript" src=" {{ asset('js/jquery-3.3.1.min.js')}}"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script type="text/javascript" src=" {{ asset('js/jquery-3.3.1.min.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
     </body>
 </html>
