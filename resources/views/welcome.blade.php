@@ -1,5 +1,17 @@
 <x-layout>
+<?php 
+?>
     <div class="container">
+    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <br />
+                    @endif
         <div class="content">
             <div class="content-title h1 text-center pt-5 pb-5">
                 Danh Sách Món Ăn
@@ -32,52 +44,60 @@
         </div>
     </div>
 
-
-</x-layout>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h3 class="form-title">Phản hồi</h3>
+    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                 <div class="modal-header">
+                <h3 class="form-title">Phản hồi</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="modal-body">
-                <form action="/send" method="get">
+                 </div>
+                <div class="modal-body">
+                <form action="/guiphanhoiquanan" method="post">
+                @csrf
                 <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Email:</label>
-                <input type="text" class="form-control" id="recipient-name" name="customer_email">
+                 <label for="recipient-name" class="col-form-label">Email:</label>
+                 <input type="email" class="form-control" id="recipient-name" name="customer_email">
                 </div>
 
                 <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Tên khách hàng:</label>
-                <input type="text" class="form-control" id="recipient-name" name="customer_name">
+                 <label for="recipient-name" class="col-form-label">Tên khách hàng:</label>
+                 <input type="text" class="form-control" id="recipient-name" name="customer_name">
                 </div>
 
                 <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Loại phản hồi</label>
-                <select class="form-control" id="recipient-name" name="feedback_type_id">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
+                 <label for="recipient-name" class="col-form-label">Loại phản hồi</label>
+                  <select class="form-control" id="recipient-name" name="feedback_type_id">   
+                  <?php 
+                    foreach($TypeFeedbacks as $item){?>
+                        <option value="{{$item->feedback_type_id}}">{{$item->feedback_type_name}}</option>
+                        <?php
+                    }
+                  ?>
+                 </select>
                 </div>
 
                 <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Phản hồi:</label>
-                <textarea class="form-control" id="recipient-name" name="feedback_content"></textarea>
+                    <label for="recipient-name" class="col-form-label">Phản hồi:</label>
+                    <textarea class="form-control" id="recipient-name" name="feedback_content"></textarea>
                 </div>
                
-
-                <label>Mã xác nhận:</label><br>
-                <span style="margin-left: 15px; background-color: #ccc;">123454</span>
-                <input type="text" style="width: 104px; margin-left: 165px; font-size: 11px; height: 28px;" placeholder="Nhập mã xác nhận"> <br><br>
+                 <div class="form-group">
+                    <div class="captcha">
+                     <label for="recipient-name" class="col-form-label">Mã phản hồi:</label>
+                     <span>{!! captcha_img('math') !!}</span>
+                     <button type="button" class="btn btn-danger" class="reload" id="reload">
+                        &#x21bb;
+                     </button>
+                    </div>
+                    <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                </div>
                 <button type="button" class="btn btn-secondary modal-btnClose" data-dismiss="modal">Đóng</button>
                 <button type="submit" class="btn btn-primary">Gửi</button>
                 </form>
-            </div>
+                </div>
+             </div>
         </div>
-
-        
+    </div>
+</x-layout>

@@ -14,8 +14,5 @@ class FeedbackController extends Controller
     public function __construct(IBusFeedback $busFeedback){
         $this->busFeedback = $busFeedback;
     }
-
-
     
-
 }
