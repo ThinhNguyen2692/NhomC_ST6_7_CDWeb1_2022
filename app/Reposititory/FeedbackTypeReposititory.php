@@ -14,5 +14,8 @@ class FeedbackTypeReposititory extends Reposititory implements IFeedbackTypeRepo
         $this->model = $model;
     }
 
+    public function GetAll(){
+        return $this->all();
+     }
 
 }
