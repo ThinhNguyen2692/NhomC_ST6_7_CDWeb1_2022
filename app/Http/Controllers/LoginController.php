@@ -24,6 +24,10 @@ class LoginController extends Controller
             'user_id' => ['required','max:255'],
             'password' => ['required','max:255']
         ]);
+        $check = $this->busLogin($request);
+        if( $check){
+            return View('feedback-list.blade');
+        }
         return View('welcome');
     }
 }

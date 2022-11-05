@@ -4,6 +4,8 @@ namespace App\Bus;
 
 use App\Bus\Interface\IBusLogin;
 use App\Reposititory\Interface\IUserReposititory;
+use App\Reposititory\Interface\IUserReposititory;
+use App\Reposititory\Interface\IUserReposititory;
 
 
 class BusLogin implements IBusLogin{
@@ -14,6 +16,13 @@ class BusLogin implements IBusLogin{
     }
 
     public function Login($request){
-        
+        $usser_id = $request->post('user_id');
+        $password = $request->post('password');
+       $check = $this->userReposititor->Login();
+       if($check){
+        return true;
+       }else{
+        return false;
+       }
     }
 }
