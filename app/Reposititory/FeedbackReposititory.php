@@ -23,4 +23,7 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
         }
     }
 
+    public function GetFeebackAll(){
+        $this->model->all();
+    }
 }
