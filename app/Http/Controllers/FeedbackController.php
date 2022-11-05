@@ -14,5 +14,9 @@ class FeedbackController extends Controller
     public function __construct(IBusFeedback $busFeedback){
         $this->busFeedback = $busFeedback;
     }
+
+    public function feedbackList(){
+        return View('feedback-list');
+    }
     
 }
