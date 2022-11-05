@@ -14,11 +14,10 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
     public function __construct(Feedback $model){
         $this->model = $model;
     }
-    
     public function AddFeedback($feedback){
         try{
-            $this->create($feedback);
-            return true;
+             $this->create($feedback);
+             return true;
         }catch(ex){
             return false;
         }

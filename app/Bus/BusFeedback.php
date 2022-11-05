@@ -23,9 +23,9 @@ class BusFeedback implements IBusFeedback{
         $feedback->customer_email = $request->post('customer_email');
         $feedback->feedback_type_id	 = $request->post('feedback_type_id');
         $feedback->feedback_content = $request->post('feedback_content');
-        $feedback->response_time = time();
+        $feedback->response_time = $request->post('date');
         $feedback->status = 0;
-        $check = $feedbackReposititory->AddFeedback($feedback);
+        $check = $this->feedbackReposititory->AddFeedback($feedback);
         return $check;
     }
 

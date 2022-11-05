@@ -16,8 +16,7 @@ class CustomerController extends Controller
     }
 
     public function Index(){
-        $TypeFeedbacks = $this->busFeedback->GetAllTypeFeedback();
-        return View('welcome')->with("TypeFeedbacks",$TypeFeedbacks);
+        return View('welcome');
     }
 
     public function SendFeedback(Request $request){
@@ -28,12 +27,14 @@ class CustomerController extends Controller
             'feedback_content' => 'required',
             'captcha' => 'required|captcha'
         ]);
-       $check = $this->busFeedback->sendFeedback($request);
-       if($check == true){
-        return View('welcome')->with("mess","Cảm ơn đã phản hồi");
-       }else{
-        return View('welcome')->with("mess","Xin lỗi phản hồi thất bại");
-       }
+        
+        $check = $this->busFeedback->sendFeedback($request);
+
+        if($check == true){
+            return View('welcome')->with("mess","Cảm ơn đã phản hồi");
+        }else{
+            return View('welcome')->with("mess","Xin lỗi phản hồi thất bại");
+        }
     }
     
     public function reloadCaptcha()
