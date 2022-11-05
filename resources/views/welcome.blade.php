@@ -1,4 +1,7 @@
 <x-layout>
+
+<x-sideBar></x-sideBar>
+
 <?php 
 if(isset($mess)){
     echo '<script>alert('.$mess.')</script>';
@@ -9,6 +12,7 @@ if(isset($mess)){
 ?>
     <div class="container">
         <div class="content">
+            <p class="pb-5"></p>
             <div class="title h1 text-center pt-5 pb-5">
                 Danh Sách Món Ăn
             </div>
@@ -40,3 +44,7 @@ if(isset($mess)){
     </div>
     <x-from-feedback/>
 </x-layout>
+
+
+
+
