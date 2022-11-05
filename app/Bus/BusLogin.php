@@ -12,4 +12,8 @@ class BusLogin implements IBusLogin{
     public function __construct(IUserReposititory $userReposititory){
         $this->userReposititory = $userReposititory;
     }
+
+    public function Login($request){
+        
+    }
 }

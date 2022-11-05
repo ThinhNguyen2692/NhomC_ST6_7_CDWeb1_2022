@@ -29,9 +29,9 @@
                 alt="">
         </div>
     </div>
+        <div class="container">
         {{ $slot }}
-
-
+        </div>
     <footer>
 
     </footer>

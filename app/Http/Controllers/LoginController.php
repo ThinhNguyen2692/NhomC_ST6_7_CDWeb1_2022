@@ -11,12 +11,19 @@ class LoginController extends Controller
 {
     private $busLogin;
 
-    public function __construct(IBusLogin $busUser){
-        $this->BusUser = $BusUser;
+    public function __construct(IBusLogin $busLogin){
+        $this->busLogin = $busLogin;
     }
 
     public function Index(){
         return View('login');
     }    
 
+    public function Login(Request $request){
+        $request->validate([
+            'user_id' => ['required','max:255'],
+            'password' => ['required','max:255']
+        ]);
+        return View('welcome');
+    }
 }
