@@ -21,7 +21,7 @@ class Reposititory implements IReposititory{
         return $this->model->find($modelId);
     }
 
-    public function create($model): ?Model{
-        $this::create($model);
+    public function create($model){
+    $this->model->insert($model->toArray());
     }
 }
