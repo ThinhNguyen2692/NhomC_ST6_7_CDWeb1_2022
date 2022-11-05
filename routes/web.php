@@ -20,4 +20,3 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [CustomerController::class, 'index']);
 Route::post('/guiphanhoiquanan', [CustomerController::class, 'SendFeedback']);
 Route::get('/reloadCaptcha', [CustomerController::class, 'reloadCaptcha']);
-round::get('/dangnhapcuahang',[LoginController::class, 'index'])->name("index");
