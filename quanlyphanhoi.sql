@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 23, 2022 at 12:50 AM
+-- Generation Time: Nov 05, 2022 at 12:38 AM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -34,15 +34,24 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `customer_email` varchar(255) NOT NULL,
   `feedback_type_id` int NOT NULL,
   `feedback_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `reply` text NOT NULL,
+  `reply` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `response_time` date NOT NULL,
-  `feedback_time` date NOT NULL,
+  `feedback_time` date DEFAULT NULL,
   `status` int NOT NULL,
   `user_id` int DEFAULT NULL,
   `fullname` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `feedback_type_id` (`feedback_type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `customer_name`, `customer_email`, `feedback_type_id`, `feedback_content`, `reply`, `response_time`, `feedback_time`, `status`, `user_id`, `fullname`) VALUES
+(2, 'dfrevg', 'nndthinh2802@mail.com', 8, 'e3dfr', NULL, '2022-11-04', NULL, 0, NULL, NULL),
+(3, 'demo', 'nndthinh2802@mail.com', 8, 'demo', NULL, '2022-11-04', NULL, 0, NULL, NULL),
+(15, 'thinh', 'nndthinh2802@mail.com', 8, 'dmoemdoemdoemeomdoemdeomdoe', NULL, '2022-11-04', NULL, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -55,7 +64,18 @@ CREATE TABLE IF NOT EXISTS `feedback_type` (
   `feedback_type_id` int NOT NULL AUTO_INCREMENT,
   `feedback_type_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`feedback_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `feedback_type`
+--
+
+INSERT INTO `feedback_type` (`feedback_type_id`, `feedback_type_name`) VALUES
+(8, 'Khác'),
+(9, 'Không gian quán'),
+(10, 'Đồ ăn'),
+(11, 'Thức uống'),
+(13, 'Vệ sinh');
 
 -- --------------------------------------------------------
 
@@ -66,9 +86,10 @@ CREATE TABLE IF NOT EXISTS `feedback_type` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(255) NOT NULL,
+  `user_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `password` text NOT NULL,
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_name` (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -119,16 +140,11 @@ ALTER TABLE `feedback`
   ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`feedback_type_id`) REFERENCES `feedback_type` (`feedback_type_id`);
 
 --
--- Constraints for table `feedback_type`
---
-ALTER TABLE `feedback_type`
-  ADD CONSTRAINT `feedback_type_ibfk_1` FOREIGN KEY (`feedback_type_id`) REFERENCES `user_feedback` (`feedback_type_id`);
-
---
 -- Constraints for table `user_feedback`
 --
 ALTER TABLE `user_feedback`
-  ADD CONSTRAINT `user_feedback_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+  ADD CONSTRAINT `user_feedback_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
+  ADD CONSTRAINT `user_feedback_ibfk_2` FOREIGN KEY (`feedback_type_id`) REFERENCES `feedback_type` (`feedback_type_id`);
 
 --
 -- Constraints for table `user_profile`

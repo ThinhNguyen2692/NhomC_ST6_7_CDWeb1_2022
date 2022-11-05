@@ -19,6 +19,7 @@ class CustomerController extends Controller
         return View('welcome');
     }
 
+    
     public function SendFeedback(Request $request){
         $request->validate([
             'customer_email' => 'required|email',
