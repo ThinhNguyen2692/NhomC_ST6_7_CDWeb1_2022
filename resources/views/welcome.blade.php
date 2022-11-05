@@ -1,7 +1,4 @@
 <x-layout>
-
-<x-sideBar></x-sideBar>
-
 <?php 
 if(isset($mess)){
     echo '<script>alert('.$mess.')</script>';
