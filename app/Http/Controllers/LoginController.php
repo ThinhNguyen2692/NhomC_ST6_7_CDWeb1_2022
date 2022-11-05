@@ -15,7 +15,7 @@ class LoginController extends Controller
         $this->busLogin = $busLogin;
     }
 
-    public function login(){
+    public function Index(){
         return View('Login');
     }    
 

@@ -25,5 +25,4 @@ Route::get('/dangnhapcuahang', [LoginController::class, 'Index']);
 Route::post('/login', [LoginController::class, 'Login']);
 
 Route::get('/feedback-list', [FeedbackController::class, 'feedbackList']);
-Route::get('/login', [LoginController::class, 'login']);
 
