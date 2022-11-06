@@ -39,8 +39,21 @@
             <a href="/">PonPon</a>
         </div>
 
+
         <div class="login-body">
             <!-- Form Login -->
+            @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <br />
+                @endif
+            <form method="post" action="/login">
+            @csrf
             <div class="login-form-container">
                 <div class="login-form-header">
                     <h4>
@@ -49,12 +62,13 @@
                 </div>
 
                 <div class="login-form">
-                    <input type="text" class="login-form-input" placeholder="Email or phone number">
-                    <input type="password" class="login-form-input" placeholder="Password">
+                    <input type="text" class="login-form-input" name="user_id" placeholder="Email or phone number">
+                    <input type="password" class="login-form-input" placeholder="Password" name="password">
                     <button class="login-form-button">Sign In</button>
 
                 </div>
             </div>
+            </form>
         </div>
 
         <div class="login-overlay">
