@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Bus\Interface\IBusLogin;
 use Illuminate\Support\Facades\Auth;
+use App\UserCustomer;
 
 
 class LoginController extends Controller
@@ -25,10 +26,13 @@ class LoginController extends Controller
             'user_id' => ['required','max:255'],
             'password' => ['required','max:255']
         ]);
-        $check = $this->busLogin->Login($request);
-        //if( $check){
-        //     return Auth::user();
-        //  }
-        return $check;
+
+        $check = $this->busLogin->Login($request); 
+       
+       if($check){
+        return View('welcome');
+      }else {
+        return View('Login');
+       }
     }
 }
