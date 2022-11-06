@@ -20,4 +20,7 @@ class UserReposititory extends Reposititory implements IUserReposititory{
     public function GetFindById($id){
         return response()->json($this->findById($id));
     }
+    public function Login($id, $pass){
+        return $this->model::Where("user_id", "=", $id)->where("password","=", $pass)->get();
+    }
 }

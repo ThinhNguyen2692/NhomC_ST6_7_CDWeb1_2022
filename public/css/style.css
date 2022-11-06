@@ -172,6 +172,7 @@ ul li a {
 }
 
 
+
 /* LOGIN */
 .login-container {
     background-image: url("./netflix_login_bgr.jpg");
@@ -271,3 +272,6 @@ ul li a {
 table.table.table-bordered.border-success.table-striped {
     text-align: center;
 }
+
+nav{z-index: 1000;}
+
