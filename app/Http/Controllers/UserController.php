@@ -24,6 +24,22 @@ class UserController extends Controller
         return $this->BusUser->GetAllUser();
     }
 
+    public function userPassword(){
+        return View('user-password');
+    }
+    
+    public function addUser(){
+        return View('add-user');
+    }
+
+    public function accountInformation(){
+        return View('account-information');
+    }
+
+    public function employeeList(){
+        return View('employee-list');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

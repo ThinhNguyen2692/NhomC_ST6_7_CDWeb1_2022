@@ -25,7 +25,7 @@
 <body class="antialiased preloading">
 <div class="header">
         <div class="logo-img">
-            <img width="70px" height="50px" src="https://banoca.com/wp-content/uploads/2021/03/logo-nha-hang.jpg"
+            <img width="70px" height="50px" src="https://laravel.com/img/logomark.min.svg"
                 alt="">
         </div>
     </div>

@@ -36,7 +36,7 @@
     <div class="login-container">
 
         <div class="login-header">
-            <a href="/">Netflix</a>
+            <a href="/">PonPon</a>
         </div>
 
         <div class="login-body">

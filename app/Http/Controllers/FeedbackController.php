@@ -18,5 +18,9 @@ class FeedbackController extends Controller
     public function feedbackList(){
         return View('feedback-list');
     }
+
+    public function addFeedbackType(){
+        return View('add-feedback-type');
+    }
     
 }

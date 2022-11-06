@@ -93,9 +93,15 @@ footer {
     padding: 3rem !important;
 }
 
-input {
+input,select {
     border: 1px solid #000;
     border-radius: 4px;
+    width: 100%;
+}
+
+button.btn.btn-success {
+    float: left;
+    width: 115px;
 }
 
 .modal-body .modal-input {
@@ -166,10 +172,8 @@ ul li a {
 }
 
 
-
-
 /* LOGIN */
-.login-container{
+.login-container {
     background-image: url("./netflix_login_bgr.jpg");
     background-size: cover;
     height: 900px;
@@ -177,14 +181,14 @@ ul li a {
     width: 100%;
 }
 
-.login-overlay{
+.login-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.login-header{
+.login-header {
     padding-top: 20px;
     padding-left: 44px;
     position: absolute;
@@ -193,7 +197,7 @@ ul li a {
     z-index: 1;
 }
 
-.login-header a{
+.login-header a {
     font-size: 5rem;
     font-weight: 700;
     text-decoration: none;
@@ -201,10 +205,10 @@ ul li a {
     color: #E50914;
 }
 
-.login-body{
+.login-body {
     width: 448px;
     height: 435px;
-    background-color:  rgba(0,0,0,0.75);
+    background-color: rgba(0, 0, 0, 0.75);
     position: absolute;
     left: 0;
     right: 0;
@@ -214,45 +218,56 @@ ul li a {
     z-index: 1;
 }
 
-.login-form-header{
+.login-form-header {
     font-size: 3.2rem;
     font-weight: 700px;
     color: #fff;
 }
 
-.login-form-container{
+.login-form-container {
     padding: 60px 70px 0;
 }
 
-.login-form-input{
+.login-form-input {
     width: 100%;
     height: 50px;
     margin-top: 16px;
     padding: 0 16px;
     color: #fff;
     font-size: 1.6rem;
-    background-color:  #333333;
+    background-color: #333333;
     border: 1px solid #333333;
     border-radius: 4px;
     outline: none;
 }
 
-.login-form-input:focus{
+.login-form-input:focus {
     border-bottom: 3px solid #eeaf67;
 }
 
-.login-form-input:first-child{
+.login-form-input:first-child {
     margin-top: 30px;
 }
 
-.login-form-button{
+.login-form-button {
     color: #fff;
     background-color: #e50914;
     width: 100%;
     font-size: 1.6rem;
-    padding:16px;
+    padding: 16px;
     border-radius: 4px;
     border: 0px;
     margin: 40px 0 14px;
     font-weight: 700;
+}
+
+
+
+/* USER-PASSWORD */
+.form-password {
+    display: block;
+}
+
+table.table.table-bordered.border-success.table-striped {
+    text-align: center;
 }

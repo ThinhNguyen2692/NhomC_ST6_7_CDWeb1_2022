@@ -25,4 +25,8 @@ Route::get('/dangnhapcuahang', [LoginController::class, 'Index']);
 Route::post('/login', [LoginController::class, 'Login']);
 
 Route::get('/feedback-list', [FeedbackController::class, 'feedbackList']);
+Route::get('/user-password', [UserController::class, 'userPassword']);
+Route::get('/add-user', [UserController::class, 'addUser']);
+Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
+Route::get('/employee-list', [UserController::class, 'employeeList']);
 

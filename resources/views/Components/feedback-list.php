@@ -61,7 +61,7 @@
                     <td>dss</td>
                     <td><a href="">Chưa phản hồi</a></td>
                 </tr>
-                <tr>
+                <tr class="status-feedback">
                     <td>dss</td>
                     <td>dss</td>
                     <td>dss</td>
