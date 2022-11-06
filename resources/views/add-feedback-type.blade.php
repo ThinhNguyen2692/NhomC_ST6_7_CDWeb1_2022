@@ -1,4 +1,5 @@
 <x-layou-admin>
+    <x-side-bar />
     <div class="container" style="max-width: 1000px;">
         <div class="table-feedback-list">
             <p class="pb-5"></p>
@@ -6,7 +7,7 @@
 
             <form class="add-feedback" action="">
                 <input type="text">
-                <button class="btn btn-success submit-btn mt-2 mb-3" type="submit">Thêm</button>
+                <button class="btn btn-primary submit-btn mt-2 mb-3" type="submit">Thêm</button>
             </form>
             <table class="table table-bordered border-success table-striped">
                 <thead>

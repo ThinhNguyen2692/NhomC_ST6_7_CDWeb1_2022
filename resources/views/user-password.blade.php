@@ -1,4 +1,4 @@
-<x-layout>
+<x-layou-admin>
 
 
 
@@ -16,8 +16,8 @@
                 <input type="password" id="2"> <br><br>
                 <label for="3">Xác nhận mật khẩu mới:</label><br>
                 <input type="password" id="3"> <br><br>
-                <button class="btn btn-success" type="submit">Cập nhật</button>
+                <button class="btn btn-primary" type="submit">Cập nhật</button>
             </form>
         </div>
     </div>
-</x-layout>
+</x-layou-admin>

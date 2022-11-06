@@ -14,11 +14,6 @@ body {
     position: fixed;
 }
 
-.logo-img {
-    margin-left: 100px;
-    margin-top: 12px;
-}
-
 /* content */
 
 .food {
@@ -43,6 +38,10 @@ body {
     right: 100px;
     bottom: 100px;
 
+}
+
+a.status-feedback {
+    color: red;
 }
 
 /* footer */
@@ -99,7 +98,7 @@ input,select {
     width: 100%;
 }
 
-button.btn.btn-success {
+button.btn.btn-primary {
     float: left;
     width: 115px;
 }
@@ -189,21 +188,25 @@ ul li a {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.login-header {
+.login-header,.header-logo{
     padding-top: 20px;
     padding-left: 44px;
     position: absolute;
-    top: -40px;
+    top: -15px;
     left: 160px;
     z-index: 1;
 }
 
-.login-header a {
-    font-size: 5rem;
+.login-header a , .header-logo a{
+    font-size: 3rem;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     color: #E50914;
+}
+.header-logo a:hover{
+    color: #E50914;
+    text-decoration: none;
 }
 
 .login-body {

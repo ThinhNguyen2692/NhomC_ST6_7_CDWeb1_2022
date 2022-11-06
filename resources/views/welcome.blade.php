@@ -35,7 +35,7 @@ if(isset($mess)){
                 </div>
             </div>
             <div class="feedback">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Phản hồi</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Phản hồi</button>
             </div>
         </div>
     </div>

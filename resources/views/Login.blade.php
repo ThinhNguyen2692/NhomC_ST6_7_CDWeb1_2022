@@ -35,10 +35,6 @@
 
     <div class="login-container">
 
-        <div class="login-header">
-            <a href="/">PonPon</a>
-        </div>
-
 
         <div class="login-body">
             <!-- Form Login -->

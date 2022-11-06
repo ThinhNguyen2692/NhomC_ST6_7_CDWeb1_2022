@@ -1,4 +1,5 @@
 <x-layou-admin>
+    <x-side-bar/>
 <div class="container" style="max-width: 1000px;">
     <div class="table-feedback-list">
         <p class="pb-5"></p>

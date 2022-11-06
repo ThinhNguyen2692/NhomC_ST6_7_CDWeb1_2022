@@ -54,8 +54,8 @@
                             max="2030-12-31"><br><br><br><br>
 
                             <div class="submit-btn pt-5">
-                                <button class="btn btn-success" type="submit">Đổi mật khẩu</button>
-                                <button class="btn btn-success" style="margin-left:10px;" type="submit">Cập nhật</button>
+                                <button class="btn btn-primary" type="submit">Đổi mật khẩu</button>
+                                <button class="btn btn-primary" style="margin-left:10px;" type="submit">Cập nhật</button>
                             </div>
 
 

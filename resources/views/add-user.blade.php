@@ -44,7 +44,7 @@
                         <label for="file">Chọn hình đại diện:</label> <br>
                         <input type="file" name="file" id="file" class="inputfile" />
                         <br><br>
-                        <button class="btn btn-success submit-btn" type="submit">Thêm</button>
+                        <button class="btn btn-primary submit-btn" type="submit">Thêm</button>
                     </div>
                 </div>
 

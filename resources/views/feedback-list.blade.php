@@ -1,4 +1,6 @@
 <x-layou-admin>
+
+<x-side-bar/>
 <div class="container" style="max-width: 1000px;">
     <div class="table-feedback-list">
         <p class="pb-5"></p>
@@ -18,19 +20,19 @@
                     <td>dss</td>
                     <td>dss</td>
                     <td>dss</td>
-                    <td><a href="">Chưa phản hồi</a></td>
+                    <td ><a class="status-feedback" href="">Chưa phản hồi</a></td>
                 </tr>
                 <tr>
                     <td>dss</td>
                     <td>dss</td>
                     <td>dss</td>
-                    <td><a href="">Chưa phản hồi</a></td>
+                    <td ><a class="status-feedback" href="">Chưa phản hồi</a></td>
                 </tr>
                 <tr>
                     <td>dss</td>
                     <td>dss</td>
                     <td>dss</td>
-                    <td><a href="">Chưa phản hồi</a></td>
+                    <td ><a class="status-feedback" href="">Chưa phản hồi</a></td>
                 </tr>
 
                 </th>
