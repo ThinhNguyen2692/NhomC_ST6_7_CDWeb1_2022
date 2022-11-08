@@ -4,7 +4,7 @@
     <div class="container">
         <div class="content">
             <div class="pb-5"></div>
-            <div class="content-title h1 text-center pt-5">
+            <div class="font-weight-bold h1 text-center pt-5">
                 Thêm Người Dùng Mới
             </div>
 

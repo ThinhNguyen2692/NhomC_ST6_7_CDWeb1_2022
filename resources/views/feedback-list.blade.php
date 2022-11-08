@@ -4,7 +4,7 @@
 <div class="container" style="max-width: 1000px;">
     <div class="table-feedback-list">
         <p class="pb-5"></p>
-        <h1 class="text-center pt-5 pb-3">DANH SÁCH PHẢN HỒI</h1>
+        <h1 class="text-center font-weight-bold pt-5 pb-3">DANH SÁCH PHẢN HỒI</h1>
         <table class="table table-bordered border-success table-striped">
             <thead>
                 <tr>

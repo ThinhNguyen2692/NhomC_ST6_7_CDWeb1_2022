@@ -22,5 +22,9 @@ class FeedbackController extends Controller
     public function addFeedbackType(){
         return View('add-feedback-type');
     }
+
+    public function replyFeedback(){
+        return View('reply-feedback');
+    }
     
 }

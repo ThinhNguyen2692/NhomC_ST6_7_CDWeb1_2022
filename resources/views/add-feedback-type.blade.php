@@ -6,7 +6,7 @@
             <h1 class="text-center pt-5 pb-3">Thêm loại phản hồi</h1>
 
             <form class="add-feedback" action="">
-                <input type="text">
+                <input class="test" placeholder="Thêm loại phản hồi" type="text">
                 <button class="btn btn-primary submit-btn mt-2 mb-3" type="submit">Thêm</button>
             </form>
             <table class="table table-bordered border-success table-striped">

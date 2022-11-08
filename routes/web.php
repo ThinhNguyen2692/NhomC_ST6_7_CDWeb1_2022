@@ -29,4 +29,5 @@ Route::get('/user-password', [UserController::class, 'userPassword']);
 Route::get('/add-user', [UserController::class, 'addUser']);
 Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
 Route::get('/employee-list', [UserController::class, 'employeeList']);
+Route::get('/reply-feedback', [FeedbackController::class, 'replyFeedback']);
 

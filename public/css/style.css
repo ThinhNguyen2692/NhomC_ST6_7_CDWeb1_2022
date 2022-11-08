@@ -41,7 +41,7 @@ body {
 }
 
 a.status-feedback {
-    color: red;
+    color: yellowgreen;
 }
 
 /* footer */
@@ -130,7 +130,7 @@ button.btn.btn-primary {
     height: 100%;
     position: fixed;
     width: 350px;
-    background-color: rgba(0, 100, 0, 0.433);
+    background-color: rgba(0, 100, 0, 0.3);
 }
 
 .logo a {
@@ -148,7 +148,7 @@ ul li {
 ul li:hover {
     padding-left: 35px;
     background-color: #4456652c;
-    border-right: 10px solid green;
+    border-right: 7px solid rgba(255, 0, 0, 0.549);
 }
 
 ul li a {
@@ -278,3 +278,10 @@ table.table.table-bordered.border-success.table-striped {
 
 nav{z-index: 1000;}
 
+.text-center{
+    font-weight: bold;
+}
+.test{
+    border: none;
+    border-bottom: 1px solid #000;
+}
