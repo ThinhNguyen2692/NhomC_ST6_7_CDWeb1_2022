@@ -15,7 +15,7 @@
             }
 
             .sender-content {
-                border: 1px #000 solid;
+                border: 1px #ced4da solid;
                 border-radius: 10px;
                 padding: 20px;
             }
@@ -33,10 +33,33 @@
 
         <div class="reply pt-5">
             <div class="reply-information-sender">
-                <div class="reply-tile font-weight-bold">Trả lời</div>
+                <div class="reply-tile font-weight-bold">Trả lời:</div>
                 <span class="reply-name ml-5">Nhân Viên: Nguyễn Thi B</span>
-                <span class="reply-time">đã trả lời vào ngày 10h25(10/07/2022)</span>
+                <span class="reply-time">đã trả lời vào ngày 10h25(10/07/2022)</span> <br>
             </div>
+
+            <style>
+                textarea#recipient-name{
+                    border: none;
+                }
+                .form-reply{
+                    border: #ced4da 1px solid;
+                    padding: 10px;
+                }
+            </style>
+            <form action="" class="form-reply">
+            <div class="reply-tile font-weight-bold">Đến:</div>
+                <span class="reply-name ml-3">Nguyễn Thi A</span>
+                <span class="reply-mail">(nguyenvana@gmail.com)</span>
+                <div class="form-group">
+                    <textarea class="form-control" id="recipient-name" name="feedback_content" placeholder="Nội dung:"></textarea>
+                </div>
+                <div>
+                    <div class="btn btn-primary">Gửi</div>
+                    <span><i class="fas fa-address-book" style="margin-left: 3%; cursor: pointer;"></i></span>
+                    <span><i class="fas fa-address-book" style="margin-left: 88%; cursor: pointer;"></i></span>
+                </div>
+            </form>
 
         </div>
 

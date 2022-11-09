@@ -22,7 +22,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     width: 500px;
-    border: #000 1px solid;
+    border: #ced4da 1px solid !important;
 
 }
 
@@ -93,7 +93,7 @@ footer {
 }
 
 input,select {
-    border: 1px solid #000;
+    border: 1px solid #ced4da !important;
     border-radius: 4px;
     width: 100%;
 }
@@ -283,5 +283,5 @@ nav{z-index: 1000;}
 }
 .test{
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ccc;
 }
