@@ -33,5 +33,11 @@ class BusFeedback implements IBusFeedback{
         $TypeFeedback = $this->feedbackTypeReposititory->GetAll();
        return $TypeFeedback;
     }
+
+    public function GetFeedbackByUser($user){
+        $userId = $user->user_id;
+        $feedbackList = $this->feedbackReposititory->GetFeebackByType($userId);
+        return $feedbackList;
+    }
     
 }

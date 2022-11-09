@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bus\Interface\IBusFeedback;
+use Illuminate\Support\Facades\Cookie;
 
 
 class FeedbackController extends Controller
@@ -16,7 +17,10 @@ class FeedbackController extends Controller
     }
 
     public function feedbackList(){
-        return View('feedback-list');
+        $user = Cookie::get('userlogin');
+       // $feedbackList =  $this->busFeedback->GetFeedbackByUser($user);
+        return $user;
+        //return View('feedback-list');
     }
 
     public function addFeedbackType(){

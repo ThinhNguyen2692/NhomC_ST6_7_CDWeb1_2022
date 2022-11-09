@@ -28,9 +28,8 @@ class LoginController extends Controller
         ]);
 
         $check = $this->busLogin->Login($request); 
-       
        if($check){
-        return View('welcome');
+        return to_route('demo');
       }else {
         return View('Login');
        }
