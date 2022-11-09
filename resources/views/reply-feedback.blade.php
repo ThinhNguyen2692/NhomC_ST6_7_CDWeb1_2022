@@ -4,22 +4,7 @@
         <div class="title font-weight-bold h1 text-center pt-5">
             Trả Lời phản Hồi
         </div>
-        <style>
-            .sender,
-            .reply-tile {
-                display: inline-block;
-            }
 
-            .sender-time {
-                margin-left: 87%;
-            }
-
-            .sender-content {
-                border: 1px #ced4da solid;
-                border-radius: 10px;
-                padding: 20px;
-            }
-        </style>
         <div class="sender-information">
             <div class="sender sender-name font-weight-bold">Nguyễn Văn A</div>
             <div class="sender sender-mail">
@@ -38,17 +23,8 @@
                 <span class="reply-time">đã trả lời vào ngày 10h25(10/07/2022)</span> <br>
             </div>
 
-            <style>
-                textarea#recipient-name{
-                    border: none;
-                }
-                .form-reply{
-                    border: #ced4da 1px solid;
-                    padding: 10px;
-                }
-            </style>
             <form action="" class="form-reply">
-            <div class="reply-tile font-weight-bold">Đến:</div>
+                <div class="reply-tile font-weight-bold">Đến:</div>
                 <span class="reply-name ml-3">Nguyễn Thi A</span>
                 <span class="reply-mail">(nguyenvana@gmail.com)</span>
                 <div class="form-group">

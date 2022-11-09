@@ -285,3 +285,28 @@ nav{z-index: 1000;}
     border: none;
     border-bottom: 1px solid #ccc;
 }
+
+/* reply feedback */
+
+textarea#recipient-name{
+    border: none;
+}
+.form-reply{
+    border: #ced4da 1px solid;
+    padding: 10px;
+}
+
+.sender,
+.reply-tile {
+    display: inline-block;
+}
+
+.sender-time {
+    margin-left: 87%;
+}
+
+.sender-content {
+    border: 1px #ced4da solid;
+    border-radius: 10px;
+    padding: 20px;
+}
