@@ -21,6 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        $this->BusUser->GetAllUser();
         return $this->BusUser->GetAllUser();
     }
 
@@ -37,7 +38,8 @@ class UserController extends Controller
     }
 
     public function employeeList(){
-        return View('employee-list');
+         $GetUsers = $this->BusUser->GetAllUser();
+        return View('employee-list')->with("users", $GetUsers);
     }
 
     /**

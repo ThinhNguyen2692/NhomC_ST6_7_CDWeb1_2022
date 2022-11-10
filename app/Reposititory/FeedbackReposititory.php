@@ -24,7 +24,9 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
     }
 
     public function GetFeebackAll(){
-        $this->model->all();
+        return $this->model->join('feedback_type', 'feedback_type.feedback_type_id', '=', 'feedback.feedback_type_id')
+        ->join('user_feedback','user_feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
+        ->get();
     }
 
     public function GetFeebackByType($userId){

@@ -275,3 +275,11 @@ table.table.table-bordered.border-success.table-striped {
 
 nav{z-index: 1000;}
 
+.user-list-tile{
+    position: relative;
+}
+.user-list-tile-item{
+position: absolute;
+right: 0;
+top: 50%;
+}

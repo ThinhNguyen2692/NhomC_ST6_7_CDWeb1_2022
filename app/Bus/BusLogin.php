@@ -25,21 +25,26 @@ class BusLogin implements IBusLogin{
         $password = md5( $request->post('password'));
        $check = $this->userReposititory->Login( $usser_id, $password);
       if($check){
-        $arr = [];
-        $user = $this->userProfileReposititory->GetById( $usser_id);
-        foreach ($user as $item) {
-           
-              if($item->status == 0) return false;
-              $arr = [
-                  'user_id' => $usser_id,
-                  'postion' => $item->postion_id
-              ];
-        }
-       $arr = json_encode($arr);
-        cookie::queue('userlogin', $arr);
-        return cookie::get('userlogin');
+        cookie::queue('userlogin', true);
+        cookie::queue('user_id', $usser_id);
+        return true;
        }else{
         return false;
        }
+    }
+    public function GetInformationUser($user_id){
+        if(!Cookie::get('userlogin')) return false;
+        $user = $this->userProfileReposititory->GetById($user_id);
+        foreach ($user as $item) {
+              if($item->status == 0) return false;
+              cookie::queue('full_name', $item->full_name);
+              cookie::queue('phone', $item->phone);
+              cookie::queue('postion_id', $item->postion_id);
+              cookie::queue('email', $item->email);
+             cookie::queue('status', $item->status);
+            cookie::queue('address', $item->address);
+            cookie::queue('avatar', $item->avatar);
+        }
+        return true;
     }
 }

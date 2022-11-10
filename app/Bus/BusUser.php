@@ -19,13 +19,8 @@ class BusUser implements IBusUser{
     }
     
     public function GetAllUser(){
-        $getalluser = $this->userReposititory->all();
-        $arr = [];
-        foreach ($getalluser as $key) {
-            $item = "userid la:".$key->id."ten la: ".$key->name;
-            array_push($arr, $item);
-        }
-        return $arr;
+        $getalluser = $this->userProfileReposititory->GetAll();
+        return $getalluser;
     }
     public function GetFindById($id){
         $getuser = $this->userReposititory->findById($id);

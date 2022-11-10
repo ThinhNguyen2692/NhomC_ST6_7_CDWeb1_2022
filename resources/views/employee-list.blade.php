@@ -2,7 +2,14 @@
 <div class="container" style="max-width: 1000px;">
     <div class="table-feedback-list">
         <p class="pb-5"></p>
-        <h1 class="text-center pt-5 pb-3">DANH SÁCH NHÂN VIÊN</h1>
+        <div class="user-list-tile">
+         <h1 class="text-center pt-5 pb-3">DANH SÁCH NHÂN VIÊN</h1>
+         <div class="user-list-tile-item">
+         <button class="btn btn-danger"><a href="/add-user">Thêm</a></button>
+         </div>
+         
+        </div>
+       
         <table class="table table-bordered border-success table-striped">
             <thead>
                 <tr>
@@ -15,36 +22,38 @@
 
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td>0123456789</td>
+                <?php
+                $count = 0;
+                foreach ($users as $item) {
+                    $count ++;
+                    $postionName = "Nhân viên";
+                    switch ($item->postion_id) {
+                        case 1:
+                            $postionName = "Quản trị hệ thống";
+                          break;
+                        case 2:
+                            $postionName = "Quản lý";
+                          break;
+                        case 3:
+                            $postionName = "Nhân viên phản hồi";
+                          break;
+                        }
+                    ?>
+                    
+                    <tr>
+                    <td><?php echo htmlentities($count); ?></td>
+                    <td><?php echo htmlentities($item->full_name); ?></td>
+                    <td><?php echo htmlentities($postionName); ?></td>
+                    <td><?php echo htmlentities($item->phone); ?></td>
                     <td style="width: 200px;">
                     <button class="btn btn-danger"><a href="">Xóa</a></button>
                     <button class="btn btn-danger"><a href="">Cập nhật</a></button>
                     </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td>0123456789</td>
-                    <td style="width: 200px;">
-                    <button class="btn btn-danger"><a href="">Xóa</a></button>
-                    <button class="btn btn-danger"><a href="">Cập nhật</a></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td>0123456789</td>
-                    <td style="width: 200px;">
-                    <button class="btn btn-danger"><a href="">Xóa</a></button>
-                    <button class="btn btn-danger"><a href="">Cập nhật</a></button>
-                    </td>
-                </tr>
+                  </tr>
+                    
+                    <?php }?>
+               
+        
 
                 </th>
             </tbody>

@@ -20,11 +20,10 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [CustomerController::class, 'index']);
 Route::post('/guiphanhoiquanan', [CustomerController::class, 'SendFeedback']);
 Route::get('/reloadCaptcha', [CustomerController::class, 'reloadCaptcha']);
-
 Route::get('/dangnhapcuahang', [LoginController::class, 'Index']);
 Route::post('/login', [LoginController::class, 'Login']);
-
-Route::get('/feedback-list', [FeedbackController::class, 'feedbackList'])->name('demo');;
+Route::get('/feedback-list', [FeedbackController::class, 'feedbackList'])->name('feedback');
+Route::get('/feedback-list-history', [FeedbackController::class, 'feedbackListhistory'])->name('feedbackListhistory');
 Route::get('/user-password', [UserController::class, 'userPassword']);
 Route::get('/add-user', [UserController::class, 'addUser']);
 Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
