@@ -29,4 +29,6 @@ Route::get('/add-user', [UserController::class, 'addUser']);
 Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
 Route::get('/employee-list', [UserController::class, 'employeeList']);
 Route::get('/reply-feedback', [FeedbackController::class, 'replyFeedback']);
+Route::get('/Logout', [LoginController::class, 'Logout']);
+Route::post('/addnewuser', [UserController::class, 'Addnewuser']);
 

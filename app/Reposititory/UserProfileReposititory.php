@@ -22,5 +22,15 @@ class UserProfileReposititory extends Reposititory implements IUserProfileReposi
     public function GetAll(){
         return $this->model->get();
     }
+
+    public function AddUserProfile($userProfile){
+        try{
+             $this->create($userProfile);
+             return true;
+        }catch(ex){
+            return false;
+        }
+    }
+    
   
 }

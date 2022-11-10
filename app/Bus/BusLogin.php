@@ -33,7 +33,7 @@ class BusLogin implements IBusLogin{
        }
     }
     public function GetInformationUser($user_id){
-        if(!Cookie::get('userlogin')) return false;
+       
         $user = $this->userProfileReposititory->GetById($user_id);
         foreach ($user as $item) {
               if($item->status == 0) return false;

@@ -42,69 +42,24 @@ class UserController extends Controller
         return View('employee-list')->with("users", $GetUsers);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function Addnewuser(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'user_name' => ['required','max:50'],
+            'phone' => ['required','max:10'],
+            'full_name' => ['required','max:255'],
+            'address' => ['required','max:255'],
+            'avarta' =>'required',
+        ]);
+        $request->hasFile('avarta');
+        $img = $request->avarta;
+        $Location = "..\public\images";
+        $imageName = $img->getClientOriginalName();
+        if(!@is_array(getimagesize($Location.$imageName))){
+            $img->move($Location, $img->getClientOriginalName());
+            $check = $this->BusUser->AddNewUser($request,  $imageName);
+            if($check == false)  echo "<script type='text/javascript'>alert('tên tài khoản đã tồn tại');</script>";
+            return View('add-user')->with("userid", $check);
+        }
     }
 }

@@ -19,27 +19,19 @@
 
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>dss</td>
+                <?php foreach($TypeFeedbacks as $item){?>
+                        <tr>
+                        <td><?php echo htmlentities($item->feedback_type_id)?></td>
+                        <td><?php echo htmlentities($item->feedback_type_name)?></td>
                         <td style="width: 200px;">
                             <button class="btn btn-danger"><a href="">Xóa</a></button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>dss</td>
-                        <td style="width: 200px;">
-                            <button class="btn btn-danger"><a href="">Xóa</a></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>dss</td>
-                        <td style="width: 200px;">
-                            <button class="btn btn-danger"><a href="">Xóa</a></button>
-                        </td>
-                    </tr>
+                        <?php
+                    }
+                  ?>
+                 
+          
 
                     </th>
                 </tbody>

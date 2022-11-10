@@ -26,6 +26,6 @@ class Formtype extends Component
     public function render()
     {
         $TypeFeedbacks = $this->busFeedback->GetAllTypeFeedback();
-        return view('components.from-feedback')->with('TypeFeedbacks',$TypeFeedbacks);
+        return view('components.form-type')->with('TypeFeedbacks',$TypeFeedbacks);
     }
 }

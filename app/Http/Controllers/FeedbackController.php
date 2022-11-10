@@ -22,13 +22,14 @@ class FeedbackController extends Controller
     }
     public function feedbackListhistory(){
         $user_id = Cookie::get('user_id');
-        $postion = Cookie::get('postion_id');
+        $postion =  Cookie::get('postion_id');
         $feedbackList =  $this->busFeedback->GetFeedbackByUser($user_id,$postion);
           return View('feedback-list')->with('feedbackList',$feedbackList)->with("status", 1);
     }
 
     public function addFeedbackType(){
-        return View('add-feedback-type');
+        $TypeFeedbacks = $this->busFeedback->GetAllTypeFeedback();
+        return View('add-feedback-type')->with('TypeFeedbacks',$TypeFeedbacks);
     }
 
     public function replyFeedback(){

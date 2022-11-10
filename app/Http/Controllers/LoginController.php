@@ -29,13 +29,15 @@ class LoginController extends Controller
         ]);
 
         $check = $this->busLogin->Login($request);
-
-        $user_id = Cookie::get('user_id');
+     
+        if($check){
+        $user_id =  $request->post('user_id');
         $getUserInformation = $this->busLogin->GetInformationUser($user_id);
-       if($check && $getUserInformation){
         return to_route('feedback');
       }else {
-        return View('Login');
+        //return View('Login');
        }
     }
+  
+
 }
