@@ -92,7 +92,8 @@ footer {
     padding: 3rem !important;
 }
 
-input,select {
+input,
+select {
     border: 1px solid #ced4da !important;
     border-radius: 4px;
     width: 100%;
@@ -188,7 +189,8 @@ ul li a {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.login-header,.header-logo{
+.login-header,
+.header-logo {
     padding-top: 20px;
     padding-left: 44px;
     position: absolute;
@@ -197,14 +199,16 @@ ul li a {
     z-index: 1;
 }
 
-.login-header a , .header-logo a{
+.login-header a,
+.header-logo a {
     font-size: 3rem;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     color: #E50914;
 }
-.header-logo a:hover{
+
+.header-logo a:hover {
     color: #E50914;
     text-decoration: none;
 }
@@ -276,22 +280,26 @@ table.table.table-bordered.border-success.table-striped {
     text-align: center;
 }
 
-nav{z-index: 1000;}
+nav {
+    z-index: 1000;
+}
 
-.text-center{
+.text-center {
     font-weight: bold;
 }
-.test{
+
+.test {
     border: none;
     border-bottom: 1px solid #ccc;
 }
 
 /* reply feedback */
 
-textarea#recipient-name{
+textarea#recipient-name {
     border: none;
 }
-.form-reply{
+
+.form-reply {
     border: #ced4da 1px solid;
     padding: 10px;
 }
@@ -310,12 +318,6 @@ textarea#recipient-name{
     border-radius: 10px;
     padding: 20px;
 }
-<<<<<<< HEAD
-
-
-
-
-
 
 
 
@@ -326,29 +328,30 @@ textarea#recipient-name{
     margin: 0 0 0 27px;
     cursor: pointer;
     margin-left: 85%;
-  }
-  
-  .user-current img {
+}
+
+.user-current img {
     border-radius: 50%;
     flex: 0 0 32px;
     max-width: 32px;
     height: 32px;
-  }
-  
-  .user-inr{
+}
+
+.user-inr {
     margin-top: 12px;
     border-radius: 10px;
     background: #fff;
     border: 1px solid #ccc;
     display: flex;
-  }
-  .user-info {
+}
+
+.user-info {
     flex: 0 0 calc(100% - 40px);
     max-width: calc(100% - 40px);
     margin-left: 5px;
-  }
-  
-  p.name {
+}
+
+p.name {
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 0;
@@ -358,23 +361,23 @@ textarea#recipient-name{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  
-  p.position {
+}
+
+p.position {
     font-weight: 300;
     font-size: 12px;
     margin-bottom: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-=======
-.user-list-tile{
+}
+
+.user-list-tile {
     position: relative;
 }
-.user-list-tile-item{
-position: absolute;
-right: 0;
-top: 50%;
+
+.user-list-tile-item {
+    position: absolute;
+    right: 0;
+    top: 50%;
 }
->>>>>>> d78db917210005f0e5f764aee9b74c38d74e37d1
