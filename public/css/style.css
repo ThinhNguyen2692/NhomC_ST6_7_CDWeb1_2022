@@ -310,3 +310,60 @@ textarea#recipient-name{
     border-radius: 10px;
     padding: 20px;
 }
+
+
+
+
+
+
+
+
+.user-current {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    max-width: 170px;
+    margin: 0 0 0 27px;
+    cursor: pointer;
+    margin-left: 85%;
+  }
+  
+  .user-current img {
+    border-radius: 50%;
+    flex: 0 0 32px;
+    max-width: 32px;
+    height: 32px;
+  }
+  
+  .user-inr{
+    margin-top: 12px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+  }
+  .user-info {
+    flex: 0 0 calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    margin-left: 5px;
+  }
+  
+  p.name {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  p.position {
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

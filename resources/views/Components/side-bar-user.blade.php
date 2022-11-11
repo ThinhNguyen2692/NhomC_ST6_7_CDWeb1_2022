@@ -7,19 +7,19 @@
         </div>
         <ul style="list-style: none;">
             <li>
-                <a href="feedback-list">
+                <a href="account-information">
                     <span><i class="fas fa-home"></i></span>
-                   Thông tin nhân viên
+                   Thông tin tài khoản
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="user-password">
                     <span><i class="fas fa-address-card"></i></span>
                    Đổi mật khẩu
                 </a>
             </li>
             <li>
-                <a href="employee-list" style="color: red;">
+                <a href="#" style="color: red;">
                     <span><i class="fas fa-cog"></i></span>
                    Đăng xuất
                 </a>
