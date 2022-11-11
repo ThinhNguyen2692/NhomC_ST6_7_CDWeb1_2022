@@ -20,15 +20,19 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [CustomerController::class, 'index']);
 Route::post('/guiphanhoiquanan', [CustomerController::class, 'SendFeedback']);
 Route::get('/reloadCaptcha', [CustomerController::class, 'reloadCaptcha']);
-
 Route::get('/dangnhapcuahang', [LoginController::class, 'Index']);
 Route::post('/login', [LoginController::class, 'Login']);
-
-Route::get('/feedback-list', [FeedbackController::class, 'feedbackList']);
+Route::get('/feedback-list', [FeedbackController::class, 'feedbackList'])->name('feedback');
+Route::get('/feedback-list-history', [FeedbackController::class, 'feedbackListhistory'])->name('feedbackListhistory');
 Route::get('/user-password', [UserController::class, 'userPassword']);
 Route::get('/add-user', [UserController::class, 'addUser']);
 Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
 Route::get('/employee-list', [UserController::class, 'employeeList']);
 Route::get('/reply-feedback', [FeedbackController::class, 'replyFeedback']);
+
 Route::get('/account-information', [UserController::class, 'accountInformation']);
+
+Route::get('/Logout', [LoginController::class, 'Logout']);
+Route::post('/addnewuser', [UserController::class, 'Addnewuser']);
+
 

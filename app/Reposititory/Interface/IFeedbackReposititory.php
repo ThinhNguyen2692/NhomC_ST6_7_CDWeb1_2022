@@ -7,4 +7,5 @@ use App\Reposititory\Interface\IReposititory;
 interface IFeedbackReposititory extends IReposititory{
     public function AddFeedback($feedback);
     public function GetFeebackAll();
+    public function GetFeebackByType($userId);
 }

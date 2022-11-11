@@ -1,3 +1,12 @@
+<?php
+$check_login = Cookie::get('userlogin');
+if($check_login != true ){
+    header("Location: http://127.0.0.1:8000");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -412,6 +421,7 @@
             <a href="/"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
             <a href="/">PonPon</a>
         </div>
+<<<<<<< HEAD
 
         <div class="dropdown user-current me">
             <div class="user-inr" style="  padding: 4px 7px;" data-bs-toggle="dropdown">
@@ -428,6 +438,7 @@
                 <li><a class="dropdown-item" style="color:red" href="#">Đăng xuất</a></li>
             </ul>
         </div>
+
     </div>
 
     {{ $slot }}

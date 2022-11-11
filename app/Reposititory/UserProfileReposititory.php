@@ -18,6 +18,19 @@ class UserProfileReposititory extends Reposititory implements IUserProfileReposi
         return $this->model::where("user_id", "=", $id)->get();
         //return response()->json($this->model->where("user_id", "=", $id)->get());
     }
- 
+    
+    public function GetAll(){
+        return $this->model->get();
+    }
+
+    public function AddUserProfile($userProfile){
+        try{
+             $this->create($userProfile);
+             return true;
+        }catch(ex){
+            return false;
+        }
+    }
+    
   
 }

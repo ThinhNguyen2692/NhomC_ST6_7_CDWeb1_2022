@@ -16,25 +16,19 @@
 
             </thead>
             <tbody>
+                <?php 
+                    foreach ($feedbackList as $item) { if($status == $item->status){?>
                 <tr>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td ><a class="status-feedback" href="">Chưa phản hồi</a></td>
+                    <td><?php echo htmlentities($item->customer_name)?></td>
+                    <td><?php echo htmlentities($item->customer_email)?></td>
+                    <td><?php echo htmlentities($item->feedback_type_name)?></td>
+                    <td><a style="color:blue;" href="/Show"><?php if($item->status == 0) echo "Chưa phản hồi"; else echo "Đã phản hồi" ;?></a></td>
                 </tr>
-                <tr>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td ><a class="status-feedback" href="">Chưa phản hồi</a></td>
-                </tr>
-                <tr>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td>dss</td>
-                    <td ><a class="status-feedback" href="">Chưa phản hồi</a></td>
-                </tr>
-
+                    <?php   
+                    }    
+                }
+                ?>
+            
                 </th>
             </tbody>
         </table>

@@ -14,5 +14,12 @@ class UserFeedbackReposititory extends Reposititory implements IUserFeedbackRepo
         $this->model = $model;
     }
 
-
+    public function AddUserFeedback($userFeedback){
+        try{
+             $this->create($userFeedback);
+             return true;
+        }catch(ex){
+            return false;
+        }
+    }
 }

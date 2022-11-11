@@ -23,4 +23,18 @@ class UserReposititory extends Reposititory implements IUserReposititory{
     public function Login($id, $pass){
         return $this->model::Where("user_id", "=", $id)->where("password","=", $pass)->get();
     }
+
+    public function GetUserByName($userName){
+        return $this->model::Where("user_name", "=", $userName)->get();
+    }
+    public function AddUser($user){
+        try {
+            $this->create($user);
+            return true;
+          }
+          catch (Exception $e) {
+            return false;
+          }
+    }
+
 }

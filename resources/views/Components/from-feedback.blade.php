@@ -43,7 +43,7 @@
                   <select class="form-control" id="recipient-name" name="feedback_type_id">   
                   <?php 
                     foreach($TypeFeedbacks as $item){?>
-                        <option value="{{$item->feedback_type_id}}">{{$item->feedback_type_name}}</option>
+                        <option value="<?php echo htmlentities($item->feedback_type_id)?>"><?php echo htmlentities($item->feedback_type_name)?></option>
                         <?php
                     }
                   ?>

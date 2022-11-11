@@ -5,4 +5,6 @@ use App\Reposititory\Interface\IReposititory;
 
 interface IUserReposititory extends IReposititory{
     public function Login($id, $pass);
+    public function AddUser($user);
+    public function GetUserByName($userName);
 }

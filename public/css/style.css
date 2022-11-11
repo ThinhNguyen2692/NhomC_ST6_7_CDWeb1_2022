@@ -310,6 +310,7 @@ textarea#recipient-name{
     border-radius: 10px;
     padding: 20px;
 }
+<<<<<<< HEAD
 
 
 
@@ -367,3 +368,13 @@ textarea#recipient-name{
     overflow: hidden;
     text-overflow: ellipsis;
   }
+=======
+.user-list-tile{
+    position: relative;
+}
+.user-list-tile-item{
+position: absolute;
+right: 0;
+top: 50%;
+}
+>>>>>>> d78db917210005f0e5f764aee9b74c38d74e37d1
