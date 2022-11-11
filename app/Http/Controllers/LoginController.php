@@ -35,7 +35,7 @@ class LoginController extends Controller
         $getUserInformation = $this->busLogin->GetInformationUser($user_id);
         return to_route('feedback');
       }else {
-        //return View('Login');
+        return View('Login');
        }
     }
   

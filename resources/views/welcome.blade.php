@@ -34,6 +34,34 @@ if(isset($mess)){
                     <p class="food-price">Giá tiền: <span>123456</span></p>
                 </div>
             </div>
+            <div class="food">
+                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
+                <div class="food-information">
+                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
+                    <p class="food-price">Giá tiền: <span>123456</span></p>
+                </div>
+            </div>
+            <div class="food">
+                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
+                <div class="food-information">
+                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
+                    <p class="food-price">Giá tiền: <span>123456</span></p>
+                </div>
+            </div>
+            <div class="food">
+                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
+                <div class="food-information">
+                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
+                    <p class="food-price">Giá tiền: <span>123456</span></p>
+                </div>
+            </div>
+            <div class="food">
+                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
+                <div class="food-information">
+                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
+                    <p class="food-price">Giá tiền: <span>123456</span></p>
+                </div>
+            </div>
             <div class="feedback">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Phản hồi</button>
             </div>

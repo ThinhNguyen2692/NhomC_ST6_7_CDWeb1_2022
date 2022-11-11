@@ -3,15 +3,13 @@
 <div class="container" style="max-width: 1000px;">
     <div class="table-feedback-list">
         <p class="pb-5"></p>
-        <div class="user-list-tile">
+    <div class="user-list-tile">
          <h1 class="text-center pt-5 pb-3">DANH SÁCH NHÂN VIÊN</h1>
          <div class="user-list-tile-item">
          <button class="btn btn-danger"><a href="/add-user">Thêm</a></button>
-         </div>
-         
-        </div>
-       
-        <table class="table table-bordered border-success table-striped">
+     </div>
+    </div> 
+            <table class="table table-bordered border-success table-striped">
             <thead>
                 <tr>
                     <th>#</th>
@@ -20,7 +18,6 @@
                     <th>Di động</th>
                     <th>Chức năng</th>
                 </tr>
-
             </thead>
             <tbody>
                 <?php
@@ -40,7 +37,6 @@
                           break;
                         }
                     ?>
-                    
                     <tr>
                     <td><?php echo htmlentities($count); ?></td>
                     <td><?php echo htmlentities($item->full_name); ?></td>
@@ -51,11 +47,7 @@
                     <button class="btn btn-danger"><a href="">Cập nhật</a></button>
                     </td>
                   </tr>
-                    
                     <?php }?>
-               
-        
-
                 </th>
             </tbody>
         </table>
