@@ -35,5 +35,25 @@ class FeedbackController extends Controller
     public function replyFeedback(){
         return View('reply-feedback');
     }
+
+    public function FeedbackTypeAdd(Request $request){
+        $request->validate([
+            'feedback_name' => ['required','min:1'],
+        ]);
+        $this->busFeedback->AddFeedBackType($request);
+        $TypeFeedbacks = $this->busFeedback->GetAllTypeFeedback();
+        return View('add-feedback-type')->with('TypeFeedbacks',$TypeFeedbacks);
+        
+    }
+
+    public function DeleteFeedbackType(Request $request){
+        $token = md5($request->get('id').Cookie::get('user_id').Cookie::get('full_name')."deletefeedback");
+        if( $request->get('token') == $token){
+            return "true";
+        }
+        else{
+            return addFeedbackType();
+        }
+    }
     
 }

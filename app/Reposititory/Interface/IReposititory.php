@@ -9,4 +9,5 @@ interface IReposititory{
  public function all(): Collection;
  public function findById(int $modelId): ?Model;
  public function create($model);
+ public function Delete(int $modelId): bool;
 }

@@ -24,4 +24,8 @@ class Reposititory implements IReposititory{
     public function create($model){
     $this->model->insert($model->toArray());
     }
+
+    public function delete(int $modelId): bool{
+        return $this->findById($modelId)->delete();
+    }
 }

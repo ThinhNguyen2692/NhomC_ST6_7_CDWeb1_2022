@@ -8,4 +8,5 @@ interface IBusFeedback{
    public function sendFeedback($request);
    public function GetAllTypeFeedback();
    public function GetFeedbackByUser($user, $postion);
+   public function AddFeedBackType($request);
 }

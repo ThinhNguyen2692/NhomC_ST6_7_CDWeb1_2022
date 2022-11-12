@@ -27,6 +27,10 @@ Route::get('/feedback-list-history', [FeedbackController::class, 'feedbackListhi
 Route::get('/user-password', [UserController::class, 'userPassword']);
 Route::get('/add-user', [UserController::class, 'addUser']);
 Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
+
+Route::post('/feedbacktypeadd', [FeedbackController::class, 'FeedbackTypeAdd']);
+
+
 Route::get('/employee-list', [UserController::class, 'employeeList']);
 Route::get('/reply-feedback', [FeedbackController::class, 'replyFeedback']);
 
@@ -34,5 +38,6 @@ Route::get('/account-information', [UserController::class, 'accountInformation']
 
 Route::get('/logout', [LoginController::class, 'Logout']);
 Route::post('/addnewuser', [UserController::class, 'Addnewuser']);
+
 
 

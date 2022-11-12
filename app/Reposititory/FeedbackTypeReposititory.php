@@ -18,4 +18,22 @@ class FeedbackTypeReposititory extends Reposititory implements IFeedbackTypeRepo
         return $this->all();
      }
 
+     public function AddFeedbackType($feedbackType){
+        try{
+             $this->create($feedbackType);
+             return true;
+        }catch(ex){
+            return false;
+        }
+    }
+
+    public function Delete($id){
+        try{
+            return $this->delete($id);
+        }catch(ex){
+            return false;
+        }
+    }
+
+
 }

@@ -426,8 +426,8 @@ if($check_login != true ){
             <div class="user-inr" style="  padding: 4px 7px;" data-bs-toggle="dropdown">
                 <img width="40" height="40" src="{{ asset('/images/'.Cookie::get('avatar'). '') }}" alt="">
                 <div class="user-info">
-                    <p class="name">Nguyen Van Anh</p>
-                    <p class="position">anhvn@gmail.com.chamcham</p>
+                    <p class="name">{{Cookie::get('full_name')}}</p>
+                    <p class="position">{{Cookie::get('email')}}</p>
                 </div>
             </div>
 

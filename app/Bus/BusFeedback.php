@@ -6,6 +6,7 @@ use App\Bus\Interface\IBusFeedback;
 use App\Reposititory\Interface\IFeedbackReposititory;
 use App\Reposititory\Interface\IFeedbackTypeReposititory;
 use App\Models\Feedback;
+use App\Models\FeedbackType;
 
 
 class BusFeedback implements IBusFeedback{
@@ -41,5 +42,15 @@ class BusFeedback implements IBusFeedback{
             $feedbackList = $this->feedbackReposititory->GetFeebackAll();
         }
      return $feedbackList;
+    }
+
+    public function AddFeedBackType($request){
+        $feedbackType = new FeedbackType();
+        $feedbackType->feedback_type_name = $request->post('feedback_name');
+      $check =  $this->feedbackTypeReposititory->AddFeedbackType($feedbackType);
+    }
+
+    public function DeletefeedbackType($feedbackTypeId){
+        
     }
 }
