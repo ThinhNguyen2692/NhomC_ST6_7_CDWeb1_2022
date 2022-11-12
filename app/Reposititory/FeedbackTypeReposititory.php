@@ -27,12 +27,13 @@ class FeedbackTypeReposititory extends Reposititory implements IFeedbackTypeRepo
         }
     }
 
-    public function Delete($id){
-        try{
-            return $this->delete($id);
-        }catch(ex){
-            return false;
-        }
+    public function Deletefeedbacktype($modelId){
+      try{
+        $modelIdName = "feedback_type_id";
+        $check = $this->Delete($modelId,$modelIdName);
+      }catch(ex){
+        return false;
+      }
     }
 
 

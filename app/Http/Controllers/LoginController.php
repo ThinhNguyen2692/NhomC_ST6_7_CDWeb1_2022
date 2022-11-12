@@ -39,20 +39,19 @@ class LoginController extends Controller
        }
     }
     public function Logout(){
-        $cookieUser = Cookie::forget('user_id');
-        $cookieLogin = Cookie::forget('userlogin');
-        $cookieFullname = cookie::forget('full_name');
-       $cookieUsername = cookie::forget('user_name');
-         $cookiePostion =  cookie::forget('postion_id');
-         $cookieStatus = cookie::forget('status');
-          $cookieAvatar =  cookie::forget('avatar');
-        return view('Welcome')
+        $cookieUser = \Cookie::forget('user_id');
+        $cookieLogin = \Cookie::forget('userlogin');
+        $cookieFullname = \Cookie::forget('full_name');
+          $cookieUsername = \Cookie::forget('user_name');
+         $cookiePostion =  \Cookie::forget('postion_id');
+         $cookieStatus = \Cookie::forget('status');
+          $cookieAvatar =  \Cookie::forget('avatar');
+        return response(View('welcome'))
         ->withCookie($cookieUser)
         ->withCookie($cookieLogin)
         ->withCookie($cookieFullname)
         ->withCookie($cookiePostion)
         ->withCookie($cookieStatus)
-        ->withCookie($cookieAddress)
         ->withCookie($cookieUsername)
         ->withCookie($cookieAvatar);
     }

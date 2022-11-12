@@ -44,6 +44,7 @@ class BusUser implements IBusUser{
             return false;
           }
           $userNew = $this->userReposititory->GetUserByName($user->user_name);
+          
           foreach ($userNew as $item) {
             $user->user_id =  $item->user_id;
           }

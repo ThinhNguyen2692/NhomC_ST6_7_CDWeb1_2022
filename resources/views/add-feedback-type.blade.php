@@ -1,4 +1,10 @@
 <x-layou-admin>
+    <?php
+        if(isset($check)){
+            echo '<script>alert("'.$check.'")</script>';
+        }
+    
+    ?>
     <x-side-bar />
     <div class="container" style="max-width: 1000px;">
         <div class="table-feedback-list">
@@ -29,8 +35,8 @@
                         ?>
                         <td style="width: 200px;">
 
-                    <button class="btn btn-danger"><a href="">Xóa</a></button>
-                    <button class="btn btn-danger"><a href="">Cập nhật</a></button>
+                        <a class="btn btn-danger" onclick="return ConfirmDelete()"  href="/deletefeedbacktype?id=<?php echo $item->feedback_type_id;?>&&token={{$token}}">Xóa</a>
+                  
                     </td>
                     </tr>
                         <?php
@@ -45,4 +51,14 @@
         </div>
 
     </div>
+    <script>
+        function ConfirmDelete()
+        {
+     var x = confirm("Bạn chắc muốn xóa?");
+    if (x)
+        return true;
+      else
+    return false;
+        }
+    </script>
 </x-layou-admin>

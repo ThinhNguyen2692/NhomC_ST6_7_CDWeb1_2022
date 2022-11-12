@@ -418,8 +418,8 @@ if($check_login != true ){
 <body class="antialiased preloading">
     <div class="header">
         <div class="header-logo">
-            <a href="/"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
-            <a href="/">PonPon</a>
+            <a href="/feedback-list"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
+            <a href="/feedback-list">PonPon</a>
         </div>
         <div class="dropdown user-current me">
             <div class="user-inr" style="  padding: 4px 7px;" data-bs-toggle="dropdown">
@@ -450,6 +450,5 @@ if($check_login != true ){
     <script type="text/javascript" src=" {{ asset('js/jquery-3.3.1.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
-    <script>
-        < /body> < /
-        html >
+
+        </body> </html >
