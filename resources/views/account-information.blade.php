@@ -1,5 +1,5 @@
-<x-layout>
-    
+<x-layou-admin>
+<x-side-bar-user/>
 <div class="container">
         <div class="content">
             <div class="pb-5"></div>
@@ -68,4 +68,4 @@
         </div>
     </div>
 
-</x-layout>
+    </x-layou-admin>

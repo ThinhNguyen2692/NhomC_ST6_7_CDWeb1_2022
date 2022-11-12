@@ -417,13 +417,30 @@ if($check_login != true ){
 
 <body class="antialiased preloading">
     <div class="header">
-    <div class="header-logo">
+        <div class="header-logo">
             <a href="/"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
             <a href="/">PonPon</a>
         </div>
-    
+<<<<<<< HEAD
+
+        <div class="dropdown user-current me">
+            <div class="user-inr" style="  padding: 4px 7px;" data-bs-toggle="dropdown">
+                <img width="40" height="40" src="https://kenh14cdn.com/thumb_w/600/2017/ava-1499305567000-0-0-312-500-crop-1499306352002.jpg" alt="">
+                <div class="user-info">
+                    <p class="name">Nguyen Van Anh</p>
+                    <p class="position">anhvn@gmail.com.chamcham</p>
+                </div>
+            </div>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="account-information">Thông tin tài khoản</a></li>
+                <li><a class="dropdown-item" href="user-password">Đổi mật khẩu</a></li>
+                <li><a class="dropdown-item" style="color:red" href="#">Đăng xuất</a></li>
+            </ul>
+        </div>
+
     </div>
-   
+
     {{ $slot }}
 
 
@@ -431,10 +448,10 @@ if($check_login != true ){
 
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript" src=" {{ asset('js/jquery-3.3.1.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
     <script>
-        < /body> <
-        /html>
+        < /body> < /
+        html >
