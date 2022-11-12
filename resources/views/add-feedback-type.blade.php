@@ -28,8 +28,10 @@
                             $token = md5($item->feedback_type_id.Cookie::get('user_id').Cookie::get('full_name')."deletefeedback");
                         ?>
                         <td style="width: 200px;">
-                            <button class="btn btn-danger"><a href="/deletefeedbacktype?id=<?php echo $item->feedback_type_id;?>&&token={{$token}}">Xóa</a></button>
-                        </td>
+
+                    <button class="btn btn-danger"><a href="">Xóa</a></button>
+                    <button class="btn btn-danger"><a href="">Cập nhật</a></button>
+                    </td>
                     </tr>
                         <?php
                     }
