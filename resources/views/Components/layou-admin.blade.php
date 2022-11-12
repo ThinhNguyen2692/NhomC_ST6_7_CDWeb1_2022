@@ -421,11 +421,10 @@ if($check_login != true ){
             <a href="/"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
             <a href="/">PonPon</a>
         </div>
-<<<<<<< HEAD
-
+   
         <div class="dropdown user-current me">
             <div class="user-inr" style="  padding: 4px 7px;" data-bs-toggle="dropdown">
-                <img width="40" height="40" src="https://kenh14cdn.com/thumb_w/600/2017/ava-1499305567000-0-0-312-500-crop-1499306352002.jpg" alt="">
+                <img width="40" height="40" src="{{ asset('/images/'.Cookie::get('avatar'). '') }}" alt="">
                 <div class="user-info">
                     <p class="name">Nguyen Van Anh</p>
                     <p class="position">anhvn@gmail.com.chamcham</p>
@@ -435,7 +434,7 @@ if($check_login != true ){
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="account-information">Thông tin tài khoản</a></li>
                 <li><a class="dropdown-item" href="user-password">Đổi mật khẩu</a></li>
-                <li><a class="dropdown-item" style="color:red" href="#">Đăng xuất</a></li>
+                <li><a class="dropdown-item" style="color:red" href="/logout">Đăng xuất</a></li>
             </ul>
         </div>
 

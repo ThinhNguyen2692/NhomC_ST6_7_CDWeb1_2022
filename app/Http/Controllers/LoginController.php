@@ -38,6 +38,25 @@ class LoginController extends Controller
         return View('Login');
        }
     }
-  
-
+    public function Logout(){
+        $cookieUser = Cookie::forget('user_id');
+        $cookieLogin = Cookie::forget('userlogin');
+       $cookieFullname = cookie::forget('full_name');
+         $cookiePhone = cookie::forget('phone');
+         $cookiePostion =  cookie::forget('postion_id');
+        $cookieEmail = cookie::forget('email');
+         $cookieStatus = cookie::forget('status');
+          $cookieAddress = cookie::forget('address');
+          $cookieAvatar =  cookie::forget('avatar');
+        return response('Welcome')
+        ->withCookie($cookieUser)
+        ->withCookie($cookieLogin)
+        ->withCookie($cookieFullname)
+        ->withCookie($cookiePostion)
+        ->withCookie($cookieEmail)
+        ->withCookie($cookieStatus)
+        ->withCookie($cookieAddress)
+        ->withCookie($cookiePhone)
+        ->withCookie($cookieAvatar);
+    }
 }
