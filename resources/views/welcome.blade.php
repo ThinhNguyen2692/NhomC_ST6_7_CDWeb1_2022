@@ -10,7 +10,7 @@ if(isset($mess)){
     <div class="container">
         <div class="content">
             <p class="pb-5"></p>
-            <div class="title h1 text-center pt-5 pb-5">
+            <div class="title font-weight-bold h1 text-center pt-5 pb-5">
                 Danh Sách Món Ăn
             </div>
             <div class="food">

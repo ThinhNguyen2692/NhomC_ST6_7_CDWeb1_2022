@@ -24,8 +24,9 @@
                         <td><?php echo htmlentities($item->feedback_type_id)?></td>
                         <td><?php echo htmlentities($item->feedback_type_name)?></td>
                         <td style="width: 200px;">
-                            <button class="btn btn-danger"><a href="">Xóa</a></button>
-                        </td>
+                    <button class="btn btn-danger"><a href="">Xóa</a></button>
+                    <button class="btn btn-danger"><a href="">Cập nhật</a></button>
+                    </td>
                     </tr>
                         <?php
                     }

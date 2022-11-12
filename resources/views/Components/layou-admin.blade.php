@@ -421,7 +421,6 @@ if($check_login != true ){
             <a href="/"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
             <a href="/">PonPon</a>
         </div>
-<<<<<<< HEAD
 
         <div class="dropdown user-current me">
             <div class="user-inr" style="  padding: 4px 7px;" data-bs-toggle="dropdown">
