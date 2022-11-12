@@ -382,7 +382,11 @@ p.position {
 }
 
 
-.login-label{
+.login-label {
     margin-top: 16px;
-    color:#fff
+    color: #fff
+}
+
+.form-phanhoi {
+    border: 1px #ced4da solid !important;
 }
