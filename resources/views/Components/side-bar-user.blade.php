@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" style="color: red;">
+                <a href="/logout" style="color: red;">
                     <span><i class="fas fa-cog"></i></span>
                    Đăng xuất
                 </a>
