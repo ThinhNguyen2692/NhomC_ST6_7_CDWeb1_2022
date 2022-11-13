@@ -67,6 +67,7 @@ class BusFeedback implements IBusFeedback{
         $check = $this->feedbackReposititory->GetfeedBackById($id);
         return $check;
     }
+
     public function DeleteFeeBack($modelId){
         $check = $this->feedbackReposititory->DeleteFeedback($modelId);
         return $check;

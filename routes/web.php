@@ -26,6 +26,9 @@ Route::get('/feedback-list', [FeedbackController::class, 'feedbackList'])->name(
 Route::get('/feedback-list-history', [FeedbackController::class, 'feedbackListhistory'])->name('feedbackListhistory');
 Route::get('/user-password', [UserController::class, 'userPassword']);
 Route::get('/add-user', [UserController::class, 'addUser']);
+Route::get('/ShowUser/{id?}', [UserController::class, 'ShowUser']);
+
+
 Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
 Route::get('/deletefeedbacktype/{id?}/{token?}', [FeedbackController::class, 'DeleteFeedbackType']);
 Route::get('/Showfeedback/{id?}', [FeedbackController::class, 'Showfeedback']);

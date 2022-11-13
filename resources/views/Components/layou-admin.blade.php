@@ -426,7 +426,20 @@ if($check_login != true ){
                 <img width="40" height="40" src="{{ asset('/images/'.Cookie::get('avatar'). '') }}" alt="">
                 <div class="user-info">
                     <p class="name">{{Cookie::get('full_name')}}</p>
-                    <p class="position">{{Cookie::get('email')}}</p>
+                    <p class="position">
+                        <?php   switch (Cookie::get('postion_id')) {
+                        case 1:
+                            echo "Quản trị hệ thống";
+                          break;
+                        case 2:
+                            echo  "Quản lý";
+                          break;
+                        case 3:
+                            echo "Nhân viên phản hồi";
+                          break;
+                        }
+                    ?>
+                    </p>
                 </div>
             </div>
 
