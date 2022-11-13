@@ -27,6 +27,10 @@ class BusLogin implements IBusLogin{
       if($check){
         cookie::queue('userlogin', true);
         cookie::queue('user_id', $usser_id);
+        foreach ($check as $item) {
+            cookie::queue('user_name', $item->user_name);
+        }
+       
         return true;
        }else{
         return false;
@@ -37,12 +41,9 @@ class BusLogin implements IBusLogin{
         $user = $this->userProfileReposititory->GetById($user_id);
         foreach ($user as $item) {
               if($item->status == 0) return false;
-              cookie::queue('full_name', $item->full_name);
-              cookie::queue('phone', $item->phone);
-              cookie::queue('postion_id', $item->postion_id);
-              cookie::queue('email', $item->email);
-             cookie::queue('status', $item->status);
-            cookie::queue('address', $item->address);
+            cookie::queue('full_name', $item->full_name);
+            cookie::queue('postion_id', $item->postion_id);
+            cookie::queue('status', $item->status);
             cookie::queue('avatar', $item->avatar);
         }
         return true;

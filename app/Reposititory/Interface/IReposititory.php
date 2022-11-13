@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 interface IReposititory{
  public function all(): Collection;
- public function findById(int $modelId): ?Model;
+  public function findById($modelId, $modelIdName);
  public function create($model);
+ public function Delete($modelId, $modelIdName);
 }

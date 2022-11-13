@@ -418,23 +418,35 @@ if($check_login != true ){
 <body class="antialiased preloading">
     <div class="header">
         <div class="header-logo">
-            <a href="/"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
-            <a href="/">PonPon</a>
+            <a href="/feedback-list"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
+            <a href="/feedback-list">PonPon</a>
         </div>
-
         <div class="dropdown user-current me">
             <div class="user-inr" style="  padding: 4px 7px;" data-bs-toggle="dropdown">
-                <img width="40" height="40" src="https://kenh14cdn.com/thumb_w/600/2017/ava-1499305567000-0-0-312-500-crop-1499306352002.jpg" alt="">
+                <img width="40" height="40" src="{{ asset('/images/'.Cookie::get('avatar'). '') }}" alt="">
                 <div class="user-info">
-                    <p class="name">Nguyen Van Anh</p>
-                    <p class="position">anhvn@gmail.com.chamcham</p>
+                    <p class="name">{{Cookie::get('full_name')}}</p>
+                    <p class="position">
+                        <?php   switch (Cookie::get('postion_id')) {
+                        case 1:
+                            echo "Quản trị hệ thống";
+                          break;
+                        case 2:
+                            echo  "Quản lý";
+                          break;
+                        case 3:
+                            echo "Nhân viên phản hồi";
+                          break;
+                        }
+                    ?>
+                    </p>
                 </div>
             </div>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="account-information">Thông tin tài khoản</a></li>
                 <li><a class="dropdown-item" href="user-password">Đổi mật khẩu</a></li>
-                <li><a class="dropdown-item" style="color:red" href="#">Đăng xuất</a></li>
+                <li><a class="dropdown-item" style="color:red" href="/logout">Đăng xuất</a></li>
             </ul>
         </div>
 
@@ -451,6 +463,5 @@ if($check_login != true ){
     <script type="text/javascript" src=" {{ asset('js/jquery-3.3.1.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
-    <script>
-        < /body> < /
-        html >
+
+        </body> </html >

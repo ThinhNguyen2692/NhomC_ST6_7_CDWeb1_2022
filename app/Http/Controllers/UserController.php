@@ -62,4 +62,7 @@ class UserController extends Controller
             return View('add-user')->with("userid", $check);
         }
     }
+    public function ShowUser(Request $request){
+
+    }
 }

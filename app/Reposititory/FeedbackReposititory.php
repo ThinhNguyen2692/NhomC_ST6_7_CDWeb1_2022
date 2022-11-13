@@ -23,9 +23,24 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
         }
     }
 
+    public function GetfeedBackById($modelId){
+        try {
+            $modelIdName = "id";
+           $check = $this->findById($modelId, $modelIdName);
+           return $check;
+        } catch (\Throwable $th) {
+            return null;
+        }
+    }
+
+    public function DeleteFeedback($modelId){
+        $modelIdName = "id";
+        $check = $this->Delete($modelId,$modelIdName);
+        return $check;
+    }
+
     public function GetFeebackAll(){
-        return $this->model->join('feedback_type', 'feedback_type.feedback_type_id', '=', 'feedback.feedback_type_id')
-        ->join('user_feedback','user_feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
+        return $this->model->join('feedback_type', 'feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
         ->get();
     }
 

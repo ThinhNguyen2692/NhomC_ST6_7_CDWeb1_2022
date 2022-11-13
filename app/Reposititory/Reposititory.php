@@ -17,11 +17,15 @@ class Reposititory implements IReposititory{
     public function all(): Collection{
         return $this->model->all();
     }
-    public function findById(int $modelId): ?Model{
-        return $this->model->find($modelId);
+    public function findById($modelId, $modelIdName){
+        return $this->model::where($modelIdName, $modelId)->limit(1)->get();
     }
 
     public function create($model){
     $this->model->insert($model->toArray());
+    }
+
+    public function Delete($modelId, $modelIdName){
+        return $this->model::where($modelIdName, $modelId)->delete();
     }
 }

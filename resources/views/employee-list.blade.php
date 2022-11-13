@@ -44,7 +44,7 @@
                     <td><?php echo htmlentities($item->phone); ?></td>
                     <td style="width: 200px;">
                     <button class="btn btn-danger"><a href="">Xóa</a></button>
-                    <button class="btn btn-danger"><a href="">Cập nhật</a></button>
+                    <button class="btn btn-danger"><a href="/ShowUser?id=<?php echo htmlentities($item->user_id);?>">Cập nhật</a></button>
                     </td>
                   </tr>
                     <?php }?>

@@ -26,13 +26,20 @@ Route::get('/feedback-list', [FeedbackController::class, 'feedbackList'])->name(
 Route::get('/feedback-list-history', [FeedbackController::class, 'feedbackListhistory'])->name('feedbackListhistory');
 Route::get('/user-password', [UserController::class, 'userPassword']);
 Route::get('/add-user', [UserController::class, 'addUser']);
+Route::get('/ShowUser/{id?}', [UserController::class, 'ShowUser']);
+
+
 Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
+Route::get('/deletefeedbacktype/{id?}/{token?}', [FeedbackController::class, 'DeleteFeedbackType']);
+Route::get('/Showfeedback/{id?}', [FeedbackController::class, 'Showfeedback']);
+Route::get('/DeleteFeedback/{id?}', [FeedbackController::class, 'DeleteFeedback']);
+
+Route::post('/feedbacktypeadd', [FeedbackController::class, 'FeedbackTypeAdd']);
 Route::get('/employee-list', [UserController::class, 'employeeList']);
 Route::get('/reply-feedback', [FeedbackController::class, 'replyFeedback']);
-
 Route::get('/account-information', [UserController::class, 'accountInformation']);
-
-Route::get('/Logout', [LoginController::class, 'Logout']);
+Route::get('/logout', [LoginController::class, 'Logout']);
 Route::post('/addnewuser', [UserController::class, 'Addnewuser']);
+
 
 
