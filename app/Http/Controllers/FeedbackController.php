@@ -50,7 +50,6 @@ class FeedbackController extends Controller
 
     public function DeleteFeedbackType(Request $request){
         $token = md5($request->get('id').Cookie::get('user_id').Cookie::get('full_name')."deletefeedback");
-       
         if( $request->get('token') == $token){
             $check = $this->busFeedback->DeletefeedbackType($request->get('id'));
             $TypeFeedbacks = $this->busFeedback->GetAllTypeFeedback();
@@ -59,7 +58,6 @@ class FeedbackController extends Controller
         else{
             return redirect()->back();
         }
-     
     }
     public function Showfeedback(Request $request){
         $Feedback = $this->busFeedback->GetFeedbackbyId($request->get('id'));
@@ -69,7 +67,6 @@ class FeedbackController extends Controller
             return redirect()->back();
         }
     }
-
     public function DeleteFeedback(Request $request){
         $Feedback = $this->busFeedback->GetFeedbackbyId($request->get('id'));
         if($Feedback != null){

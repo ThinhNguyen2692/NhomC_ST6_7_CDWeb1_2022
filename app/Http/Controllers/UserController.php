@@ -10,9 +10,11 @@ use App\Bus\Interface\IBusUser;
 class UserController extends Controller
 {
     private $BusUser;
+    private $busFeedback;
 
-    public function __construct(IBusUser $BusUser){
+    public function __construct(IBusUser $BusUser,IBusFeedback $busFeedback){
         $this->BusUser = $BusUser;
+        $this->busFeedback = $busFeedback;
     }
     /**
      * Display a listing of the resource.
@@ -33,9 +35,7 @@ class UserController extends Controller
         return View('add-user');
     }
 
-    public function accountInformation(){
-        return View('account-information');
-    }
+
 
     public function employeeList(){
          $GetUsers = $this->BusUser->GetAllUser();
@@ -63,6 +63,14 @@ class UserController extends Controller
         }
     }
     public function ShowUser(Request $request){
-
+        $user_id = $request->get('user_id');
+        if($user_id != Cookie::get('user_id')){
+            if(Cookie::get('postion_id') != 1){
+                return to_route('feedback');
+            }
+        }
+        $UserInformation = $this->BusUser->GetInformationUser($user_id);
+        $TypeFeedbacks = $this->busFeedback->GetAllTypeFeedback();
+        return View('account-information')->with('UserInformation',$UserInformation)->with('TypeFeedbacks',$TypeFeedbacks);;
     }
 }

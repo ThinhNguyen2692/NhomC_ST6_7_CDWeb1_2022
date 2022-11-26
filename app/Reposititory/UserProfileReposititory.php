@@ -32,5 +32,9 @@ class UserProfileReposititory extends Reposititory implements IUserProfileReposi
         }
     }
     
+    public function GetInformationUser($id){
+        $this->model::where('user_id', '=', $id)->join('user','user.user_id', '=', 'user_id')
+        ->join('user_feedback', 'user_feedback.user_id', '=', 'user_id')->join('feedback_type', 'feedback_type.feedback_type_id ', '=', 'user_feedback.feedback_type_id ')->limit(1)->get();
+    }
   
 }

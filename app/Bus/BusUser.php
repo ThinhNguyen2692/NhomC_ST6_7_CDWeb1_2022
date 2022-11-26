@@ -27,7 +27,7 @@ class BusUser implements IBusUser{
     }
     public function GetFindById($id){
         $getuser = $this->userReposititory->findById($id);
-        $item = "userid la:".$getuser->id."ten la: ".$getuser->name;
+        
         return $item;
     }
 
@@ -72,6 +72,12 @@ class BusUser implements IBusUser{
         $userFeedback->feedback_type_id = $request->post('feedback_type_id');
         $check = $this->userFeedbackReposititory->AddUserFeedback($userFeedback);
         return $user->user_id;   
+    }
+
+    public function GetInformationUser($id){
+      $user = $this->userProfileReposititory->GetInformationUser($id);
+      $user->password = "";
+      return $user;
     }
 
 }
