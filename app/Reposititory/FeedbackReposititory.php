@@ -50,4 +50,10 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
         ->where('user_feedback.user_id', '=', $userId)->get();
     }
 
+    public function UpdateFeedback($feedback){
+        $modelIdName = "id";
+        //var_dump($feedback["id"]);
+       return $this->Update($feedback, $modelIdName, $feedback["id"]);
+    }
+
 }

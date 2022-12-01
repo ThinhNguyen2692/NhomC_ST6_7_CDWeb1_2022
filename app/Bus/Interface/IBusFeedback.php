@@ -12,4 +12,5 @@ interface IBusFeedback{
    public function DeletefeedbackType($feedbackTypeId);
    public function GetFeedbackbyId($id);
    public function DeleteFeeBack($modelId);
+   public function Reply($request);
 }

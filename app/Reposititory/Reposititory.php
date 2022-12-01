@@ -27,5 +27,10 @@ class Reposititory implements IReposititory{
         return $this->model::where($modelIdName, $modelId)->delete();
     }
     
+    public function Update($modelNew, $modelIdName, $modelId){
+        $model = $this->model::where($modelIdName, $modelId);
+        
+         return $model->update($modelNew);
+    }
     
 }

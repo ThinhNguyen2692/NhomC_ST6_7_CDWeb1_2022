@@ -33,6 +33,9 @@ Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType'])
 Route::get('/deletefeedbacktype/{id?}/{token?}', [FeedbackController::class, 'DeleteFeedbackType']);
 Route::get('/Showfeedback/{id?}', [FeedbackController::class, 'Showfeedback']);
 Route::get('/DeleteFeedback/{id?}', [FeedbackController::class, 'DeleteFeedback']);
+Route::post('/traloiphanhoi', [FeedbackController::class, 'UpdateFeedback']);
+
+
 
 Route::post('/feedbacktypeadd', [FeedbackController::class, 'FeedbackTypeAdd']);
 Route::get('/employee-list', [UserController::class, 'employeeList']);

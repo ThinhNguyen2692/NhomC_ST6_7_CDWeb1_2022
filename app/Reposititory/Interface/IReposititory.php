@@ -10,4 +10,5 @@ interface IReposititory{
   public function findById($modelId, $modelIdName);
  public function create($model);
  public function Delete($modelId, $modelIdName);
+ public function Update($model, $modelIdName, $modelId);
 }

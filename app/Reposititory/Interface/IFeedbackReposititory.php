@@ -9,4 +9,5 @@ interface IFeedbackReposititory extends IReposititory{
     public function GetFeebackByType($userId);
     public function GetfeedBackById($modelId);
     public function DeleteFeedback($modelId);
+    public function UpdateFeedback($feedback);
 }

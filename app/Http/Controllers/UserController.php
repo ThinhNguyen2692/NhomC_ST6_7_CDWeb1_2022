@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bus\Interface\IBusUser;
+use App\Bus\Interface\IBusFeedback;
 
 
 class UserController extends Controller

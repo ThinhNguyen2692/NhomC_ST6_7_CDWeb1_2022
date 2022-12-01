@@ -7,7 +7,9 @@ use App\Reposititory\Interface\IFeedbackReposititory;
 use App\Reposititory\Interface\IFeedbackTypeReposititory;
 use App\Models\Feedback;
 use App\Models\FeedbackType;
-
+use Cookie;
+use App\Mail\TestEmail;
+use Illuminate\Support\Facades\Mail;
 
 class BusFeedback implements IBusFeedback{
     private $feedbackReposititory;
@@ -72,4 +74,36 @@ class BusFeedback implements IBusFeedback{
         $check = $this->feedbackReposititory->DeleteFeedback($modelId);
         return $check;
     }
+
+    public function Reply($request){
+        $user_id = Cookie::get('user_id');
+        $full_name = Cookie::get('full_name');
+        $feedback = $this->GetFeedbackbyId($request->post('feedback_id'))[0];
+        $feedback->status = 1;
+        $feedback->reply = ($request->post('feedback_content'));
+        $feedback->user_id = $user_id;
+        $feedback->fullname = $full_name;
+        $check = $this->feedbackReposititory->UpdateFeedback($feedback->toArray());
+        $this->sendEmail( $feedback->reply, $feedback->feedback_content, $feedback->customer_email, $feedback->customer_name);
+       
+        return $this->GetFeedbackbyId($request->post('feedback_id'));
+
+    }
+
+
+public function sendEmail($reply,$content, $email, $customer_name){
+    
+        
+        $data = [
+          'title'=>"Cửa hàng phản hồi nội dung cho khách hàng",
+          'customer_name' => $customer_name,
+          'data' => $content,
+          'reply' => $reply,
+      ];
+      //var_dump($data);
+    Mail::to($email)->send(new TestEmail($data));
+   
 }
+
+}
+

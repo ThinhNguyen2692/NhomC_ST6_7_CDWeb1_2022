@@ -33,8 +33,11 @@ class FeedbackController extends Controller
     }
 
     public function replyFeedback(){
+
         return View('reply-feedback');
     }
+
+
 
     public function FeedbackTypeAdd(Request $request){
         $request->validate([
@@ -59,6 +62,9 @@ class FeedbackController extends Controller
             return redirect()->back();
         }
     }
+
+
+
     public function Showfeedback(Request $request){
         $Feedback = $this->busFeedback->GetFeedbackbyId($request->get('id'));
         if($Feedback != null){
@@ -82,6 +88,19 @@ class FeedbackController extends Controller
         } else{
             return redirect()->back();
         }
+    }
+
+    public function UpdateFeedback(Request $request)
+    {
+        $request->validate([
+            'feedback_content' => ['required']]);
+          $Feedback = $this->busFeedback->Reply($request);
+          //var_dump($Feedback);
+           if($Feedback != null){
+             return View('reply-feedback')->with('Feedback',$Feedback);
+         } else{
+             return redirect()->back();
+         }
     }
     
 }
