@@ -85,6 +85,6 @@ class BusFood implements IBusFood{
         return $this->foodReposititory->GetFoodTen();
     }
 
-    public function Cart($id, $quantity){
+   
       
 }
