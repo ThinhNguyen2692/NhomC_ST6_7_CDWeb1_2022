@@ -20,9 +20,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
-                $count = 0;
-                foreach ($users as $item) {
+                 <?php
+                 $count = 0;
+                 foreach ($users as $item) {
                     $count ++;
                     $postionName = "Nhân viên";
                     switch ($item->postion_id) {

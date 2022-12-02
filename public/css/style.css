@@ -294,9 +294,7 @@ nav {
 
 /* reply feedback */
 
-textarea#recipient-name {
-    border: none;
-}
+
 
 .form-reply {
     border: #ced4da 1px solid;
@@ -385,4 +383,8 @@ p.position {
 .login-label{
     margin-top: 16px;
     color:#fff
+}
+
+.description{
+    border: #333333 solid 2px;
 }

@@ -32,6 +32,12 @@
                     Thêm loại phản hồi
                 </a>
             </li>
+            <li>
+                <a href="/view-food">
+                    <span><i class="fas fa-address-book"></i></span>
+                    Món ăn
+                </a>
+            </li>
             
             <?php } ?>
         

@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FoodController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,9 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [CustomerController::class, 'index']);
 Route::post('/guiphanhoiquanan', [CustomerController::class, 'SendFeedback']);
 Route::get('/reloadCaptcha', [CustomerController::class, 'reloadCaptcha']);
+Route::get('/add-Cart', [CustomerController::class, 'Cart']);
+
+
 Route::get('/dangnhapcuahang', [LoginController::class, 'Index']);
 Route::post('/login', [LoginController::class, 'Login']);
 Route::get('/feedback-list', [FeedbackController::class, 'feedbackList'])->name('feedback');
@@ -50,5 +54,9 @@ Route::post('/UpdateUser', [UserController::class, 'UpdateUser']);
 Route::get('/delete/{id?}/{token?}', [UserController::class, 'DeleteUser']);
 
 
-
-
+Route::get('/view-food', [FoodController::class, 'Index']);
+Route::get('/View-add-food', [FoodController::class, 'AddViewFood']);
+Route::post('/addfood', [FoodController::class, 'AddFood']);
+Route::post('/updatefood', [FoodController::class, 'UpdateFood']);
+Route::get('/Showfood/{id?}', [FoodController::class, 'Showfood']);
+Route::get('/DeleteFood/{id?}/{token?}', [FoodController::class, 'DeleteFood']);

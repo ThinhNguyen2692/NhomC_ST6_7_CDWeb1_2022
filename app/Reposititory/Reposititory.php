@@ -19,6 +19,11 @@ class Reposititory implements IReposititory{
     public function findById($modelId, $modelIdName){
         return $this->model::where($modelIdName, $modelId)->limit(1)->get();
     }
+
+    public function GetFoodTen(){
+        return $this->model::limit(10)->get();
+    }
+
     public function create($model){
     $this->model->insert($model->toArray());
     }

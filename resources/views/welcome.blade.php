@@ -1,75 +1,48 @@
-<x-layout>
-<?php 
-if(isset($mess)){
-    echo '<script>alert('.$mess.')</script>';
-}
 
+<x-layout-home>
+<main>
 
+  <section style='background-image: url("{{asset("/images/catering-2778755__340.jpg")}}"); color: #fff;' class="py-5 text-center">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
 
-?>
-    <div class="container">
-        <div class="content">
-            <p class="pb-5"></p>
-            <div class="title font-weight-bold h1 text-center pt-5 pb-5">
-                Danh Sách Món Ăn
+        <h1 class="fw-light">Khách hàng phản hồi tại đây</h1>
+        <div class="feedback">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Phản hồi</button>
             </div>
-            <div class="food">
-                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
-                <div class="food-information">
-                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
-                    <p class="food-price">Giá tiền: <span>123456</span></p>
-                </div>
-            </div>
-            <div class="food">
-                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
-                <div class="food-information">
-                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
-                    <p class="food-price">Giá tiền: <span>123456</span></p>
-                </div>
-            </div>
-            <div class="food">
-                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
-                <div class="food-information">
-                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
-                    <p class="food-price">Giá tiền: <span>123456</span></p>
-                </div>
-            </div>
-            <div class="food">
-                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
-                <div class="food-information">
-                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
-                    <p class="food-price">Giá tiền: <span>123456</span></p>
-                </div>
-            </div>
-            <div class="food">
-                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
-                <div class="food-information">
-                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
-                    <p class="food-price">Giá tiền: <span>123456</span></p>
-                </div>
-            </div>
-            <div class="food">
-                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
-                <div class="food-information">
-                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
-                    <p class="food-price">Giá tiền: <span>123456</span></p>
-                </div>
-            </div>
-            <div class="food">
-                <img class="food-img" width="100px" height="100px" src="https://yummyday.vn/uploads/images/cach-lam-ca-loc-nuong-mo-hanh.jpg" alt="">
-                <div class="food-information">
-                    <p class="food-name h4">Tên món: <span>Cá lóc nướng</span></p>
-                    <p class="food-price">Giá tiền: <span>123456</span></p>
-                </div>
-            </div>
-            <div class="feedback">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Phản hồi</button>
-            </div>
-        </div>
+      </div>
     </div>
-    <x-from-feedback/>
-</x-layout>
+  </section>
 
+  <div class="album py-5 bg-light">
+    <div class="container">
 
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <?php 
+            foreach ($foods as $item) {?>
+                  <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ asset('/images/'.$item->food_Image. '') }}" width="100%" height="225" alt="">
+            <div class="card-body">
+              <p class="card-text"><?php echo htmlentities($item->food_name); ?></p>
+              <p><?php echo htmlentities($item->food_description); ?></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Thêm Giỏ hàng</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+            <?php } ?>
+      
+       
+      </div>
+    </div>
+  </div>
 
+  <x-from-feedback/>
+</main>
 
+</x-layout-home>

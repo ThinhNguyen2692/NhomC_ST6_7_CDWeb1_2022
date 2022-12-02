@@ -35,7 +35,7 @@
                 }
                 ?>
             
-                </th>
+                
             </tbody>
         </table>
     </div>

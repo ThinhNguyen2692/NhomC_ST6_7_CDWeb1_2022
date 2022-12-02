@@ -11,4 +11,5 @@ interface IReposititory{
  public function create($model);
  public function Delete($modelId, $modelIdName);
  public function Update($model, $modelIdName, $modelId);
+ public function GetFoodTen();
 }

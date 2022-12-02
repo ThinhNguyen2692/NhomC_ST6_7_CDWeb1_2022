@@ -5,18 +5,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Bus\Interface\IBusFeedback;
+use  App\Models\Food;
+use App\Bus\Interface\IBusFood;
 
 
 class CustomerController extends Controller
 {
     private $busFeedback;
+    private $busFood;
 
-    public function __construct(IBusFeedback $busFeedback){
+    public function __construct(IBusFeedback $busFeedback, IBusFood $busFood){
         $this->busFeedback = $busFeedback;
+        $this->busFood = $busFood;
     }
 
     public function Index(){
-        return View('welcome');
+        $model = $this->busFood->GetFoodTen();
+      
+        return View('welcome')->with('foods',$model);
     }
 
     
@@ -43,6 +49,9 @@ class CustomerController extends Controller
         return response()->json(['captcha'=> captcha_img('math')]);
     }
 
-
+    public function Cart(){
+        $this->busFood->Cart(1,1);
+        
+    }
 
 }
