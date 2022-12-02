@@ -419,7 +419,9 @@
     {{ $slot }}
     <!-- </div> -->
     <footer>
-
+        <div style="color: #fff;line-height: 40px; margin-left: 65%;">
+            <span>Địa chỉ: 53 Đ. Võ Văn Ngân, Linh Chiểu, Thành Phố Thủ Đức, Thành phố Hồ Chí Minh</span>
+        </div>
     </footer>
 
 

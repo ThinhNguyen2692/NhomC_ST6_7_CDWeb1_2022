@@ -1,6 +1,6 @@
 <?php
 $check_login = Cookie::get('userlogin');
-if($check_login != true ){
+if ($check_login != true) {
     header("Location: http://127.0.0.1:8000");
     exit;
 }
@@ -427,18 +427,18 @@ if($check_login != true ){
                 <div class="user-info">
                     <p class="name">{{Cookie::get('full_name')}}</p>
                     <p class="position">
-                        <?php   switch (Cookie::get('postion_id')) {
-                        case 1:
-                            echo "Quản trị hệ thống";
-                          break;
-                        case 2:
-                            echo  "Quản lý";
-                          break;
-                        case 3:
-                            echo "Nhân viên phản hồi";
-                          break;
+                        <?php switch (Cookie::get('postion_id')) {
+                            case 1:
+                                echo "Quản trị hệ thống";
+                                break;
+                            case 2:
+                                echo  "Quản lý";
+                                break;
+                            case 3:
+                                echo "Nhân viên phản hồi";
+                                break;
                         }
-                    ?>
+                        ?>
                     </p>
                 </div>
             </div>
@@ -454,14 +454,18 @@ if($check_login != true ){
 
     {{ $slot }}
 
-
     <footer>
-
+        <div style="color: #fff;line-height: 40px; margin-left: 65%;">
+            <span>Địa chỉ: 53 Đ. Võ Văn Ngân, Linh Chiểu, Thành Phố Thủ Đức, Thành phố Hồ Chí Minh</span>
+        </div>
     </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript" src=" {{ asset('js/jquery-3.3.1.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
 
-        </body> </html >
+</body>
+
+</html>
