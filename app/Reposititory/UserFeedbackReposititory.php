@@ -22,4 +22,12 @@ class UserFeedbackReposititory extends Reposititory implements IUserFeedbackRepo
             return false;
         }
     }
+    public function UpdateUserTyupe($UserTyupe){
+        $user = $this->model::where('user_id','=', $UserTyupe->user_id)->update($UserTyupe->toArray());
+     }
+
+     public function DeleteUserType($modelId){
+        $modelIdName = "user_id";
+        $check = $this->Delete($modelId,$modelIdName);
+    }
 }

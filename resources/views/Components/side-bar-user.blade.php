@@ -7,7 +7,7 @@
         </div>
         <ul style="list-style: none;">
             <li>
-                <a href="account-information">
+                <a href="/information">
                     <span><i class="fas fa-home"></i></span>
                    Thông tin tài khoản
                 </a>

@@ -33,8 +33,19 @@ class UserProfileReposititory extends Reposititory implements IUserProfileReposi
     }
     
     public function GetInformationUser($id){
-        $this->model::where('user_id', '=', $id)->join('user','user.user_id', '=', 'user_id')
-        ->join('user_feedback', 'user_feedback.user_id', '=', 'user_id')->join('feedback_type', 'feedback_type.feedback_type_id ', '=', 'user_feedback.feedback_type_id ')->limit(1)->get();
+      return $this->model::where('user_profile.user_id', '=', $id, 'and', 'feedback_type.feedback_type_id', '=', 'user_feedback.feedback_type_id')
+        ->join('users','users.user_id','=','user_profile.user_id')
+        ->join('user_feedback', 'user_feedback.user_id','=','users.user_id')
+        ->join('feedback_type', 'feedback_type.feedback_type_id','=','user_feedback.feedback_type_id')->first();
+        
     }
-  
+    public function UpdateUser($User){
+        $user = $this->model::where('user_id','=', $User->user_id)->update($User->toArray());
+     
+     }
+     public function DeleteUserProfile($modelId){
+        $modelIdName = "user_id";
+        $check = $this->Delete($modelId,$modelIdName);
+       
+    }
 }

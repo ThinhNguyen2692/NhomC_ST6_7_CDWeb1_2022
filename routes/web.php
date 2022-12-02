@@ -41,8 +41,14 @@ Route::post('/feedbacktypeadd', [FeedbackController::class, 'FeedbackTypeAdd']);
 Route::get('/employee-list', [UserController::class, 'employeeList']);
 Route::get('/reply-feedback', [FeedbackController::class, 'replyFeedback']);
 Route::get('/ShowUser/{id?}', [UserController::class, 'ShowUser']);
+Route::get('/information', [UserController::class, 'InfomationUserLogin']);
 Route::get('/logout', [LoginController::class, 'Logout']);
 Route::post('/addnewuser', [UserController::class, 'Addnewuser']);
+Route::get('/AdminUpdatePass/{id?}/{token?}', [UserController::class, 'AdminUpdatePass']);
+Route::post('/UpdatePass', [UserController::class, 'UpdatePass']);
+Route::post('/UpdateUser', [UserController::class, 'UpdateUser']);
+Route::get('/delete/{id?}/{token?}', [UserController::class, 'DeleteUser']);
+
 
 
 

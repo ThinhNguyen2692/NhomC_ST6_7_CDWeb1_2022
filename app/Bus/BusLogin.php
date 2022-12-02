@@ -24,7 +24,7 @@ class BusLogin implements IBusLogin{
         $usser_id = $request->post('user_id');
         $password = md5( $request->post('password'));
        $check = $this->userReposititory->Login( $usser_id, $password);
-      if($check){
+      if(count($check) != 0){
         cookie::queue('userlogin', true);
         cookie::queue('user_id', $usser_id);
         foreach ($check as $item) {

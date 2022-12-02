@@ -37,4 +37,20 @@ class UserReposititory extends Reposititory implements IUserReposititory{
           }
     }
 
-}
+    public function GetId($userId, $modelname){
+       return $this->findById($userId, $modelname);
+    }
+    public function UpdatePass($Pass, $userId){
+       
+        $modelname = "user_id";
+       $user = $this->GetId($userId, $modelname);
+       $this->model::where('user_id','=', $userId)->update(['password' => $Pass]);
+    }
+
+    public function DeleteUser($modelId){
+        $modelIdName = "user_id";
+        $check = $this->Delete($modelId,$modelIdName);
+    
+    }
+  
+}   

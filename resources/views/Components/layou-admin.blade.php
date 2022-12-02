@@ -444,7 +444,7 @@ if($check_login != true ){
             </div>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="account-information">Thông tin tài khoản</a></li>
+                <li><a class="dropdown-item" href="/information">Thông tin tài khoản</a></li>
                 <li><a class="dropdown-item" href="user-password">Đổi mật khẩu</a></li>
                 <li><a class="dropdown-item" style="color:red" href="/logout">Đăng xuất</a></li>
             </ul>

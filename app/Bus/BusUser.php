@@ -27,8 +27,8 @@ class BusUser implements IBusUser{
     }
     public function GetFindById($id){
         $getuser = $this->userReposititory->findById($id);
-        
-        return $item;
+       // var_dump($getuser);
+        return $getuser;
     }
 
     public function AddNewUser($request, $imageName){
@@ -75,9 +75,56 @@ class BusUser implements IBusUser{
     }
 
     public function GetInformationUser($id){
-      $user = $this->userProfileReposititory->GetInformationUser($id);
-      $user->password = "";
+    $user = $this->userProfileReposititory->GetInformationUser($id);
+      $user["password"] = "";
       return $user;
+    }
+
+
+    public function AdminUpdatePass($request){
+      $user_id = $request->get("id");
+      $pass = md5("123456789");
+      $this->userReposititory->UpdatePass($pass,$user_id);
+    }
+
+    public function UpdatePass($request, $user_id){
+      $password = md5($request->post("password"));
+      $check = $this->userReposititory->Login( $user_id, $password);
+     
+       if(count($check) != 0){
+         $pass = md5($request->post("passwordNew"));
+         $this->userReposititory->UpdatePass($pass,$user_id);
+         return true;
+       }
+      return false;
+      
+    }
+
+    public function UpdateUser($request){
+      $userProfile = new UserProfile();
+      $userProfile->user_id = $request->post('user_id');
+      $userProfile->full_name = $request->post('full_name');
+      $userProfile->phone = $request->post('phone');
+      $userProfile->address = $request->post('address');
+      $userProfile->email = $request->post('email');
+      $userProfile->postion_id = $request->post('postion_id');
+      $userProfile->status = $request->post('status');
+    
+      $userProfile->create_time_at_account = $request->post('create_time_at_account');
+      $userProfile->last_logged_in = $request->post('last_logged_in');
+      $userProfile->avatar = $request->post('avatar');
+      $check = $this->userProfileReposititory->UpdateUser($userProfile);
+      $userFeedback = new UserFeedback();
+      $userFeedback->user_id =  $request->post('user_id');
+      $userFeedback->feedback_type_id = $request->post('feedback_type_id');
+      $check = $this->userFeedbackReposititory->UpdateUserTyupe($userFeedback);
+    }
+
+    public function DeleteUser($modelId){
+      $this->userFeedbackReposititory->DeleteUserType($modelId);
+      $this->userProfileReposititory->DeleteUserProfile($modelId);
+      $this->userReposititory->DeleteUser($modelId);
+
     }
 
 }

@@ -43,7 +43,7 @@
                     <td><?php echo htmlentities($postionName); ?></td>
                     <td><?php echo htmlentities($item->phone); ?></td>
                     <td style="width: 200px;">
-                    <button class="btn btn-danger"><a href="">Xóa</a></button>
+                    <button class="btn btn-danger"><a onclick="return ConfirmDelete()"  href="/delete?id=<?php echo htmlentities($item->user_id);?>&token=<?php echo md5(Cookie::get('user_id')."quananngon")?>">Xóa</a></button>
                     <button class="btn btn-danger"><a href="/ShowUser?id=<?php echo htmlentities($item->user_id);?>">Cập nhật</a></button>
                     </td>
                   </tr>
@@ -54,4 +54,14 @@
     </div>
 
 </div>
+<script>
+        function ConfirmDelete()
+        {
+     var x = confirm("Bạn chắc muốn xóa?");
+    if (x)
+        return true;
+      else
+    return false;
+        }
+    </script>
 </x-layou-admin>
