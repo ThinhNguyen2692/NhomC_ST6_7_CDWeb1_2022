@@ -409,8 +409,8 @@
 <body class="antialiased preloading">
     <div class="header">
         <div class="header-logo">
-            <a href="/"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
-            <a href="/">PonPon</a>
+            <a href="/feedback-list"> <img class="mb-3" width="65px" height="60px" src="https://laravel.com/img/logomark.min.svg" alt=""></a>
+            <a href="/feedback-list">PonPon</a>
         </div>
     </div>
 

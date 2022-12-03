@@ -14,7 +14,7 @@ class Reposititory implements IReposititory{
         $this->model = $model;
     }
     public function all(){
-        return $this->model->paginate(10);
+        return $this->model->paginate(5);
     }
     public function findById($modelId, $modelIdName){
         return $this->model::where($modelIdName, $modelId)->limit(1)->get();
@@ -39,7 +39,7 @@ class Reposititory implements IReposititory{
     }
     
     public function Search($key, $modelIdName){
-        return  $this->model::where($modelIdName, 'like', $key)->paginate(10); 
+        return  $this->model::where($modelIdName, 'like', $key)->paginate(5); 
     }
 
 }

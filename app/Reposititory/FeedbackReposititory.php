@@ -42,7 +42,7 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
     public function GetFeebackAll($status){
         return $this->model->join('feedback_type', 'feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
         ->Where('feedback.status','=',$status)
-        ->paginate(2);
+        ->paginate(5);
     }
 
     public function GetFeebackAllCheck(){
@@ -53,7 +53,7 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
     public function GetFeebackByType($userId){
         return $this->model->join('feedback_type', 'feedback_type.feedback_type_id', '=', 'feedback.feedback_type_id')
         ->join('user_feedback','user_feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
-        ->where('user_feedback.user_id', '=', $userId)->paginate(2);
+        ->where('user_feedback.user_id', '=', $userId)->paginate(5);
     }
 
     public function UpdateFeedback($feedback){

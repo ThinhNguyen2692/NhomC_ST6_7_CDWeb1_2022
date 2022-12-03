@@ -44,6 +44,7 @@ class FoodReposititory extends Reposititory implements IFoodReposititory{
         $modelIdName = "food_name";
         return $this->Search($key, $modelIdName);
     }
+    
 
     
 }

@@ -20,7 +20,7 @@ class UserProfileReposititory extends Reposititory implements IUserProfileReposi
     }
     
     public function GetAll(){
-        return $this->model->paginate(10);
+        return $this->model->paginate(5);
     }
 
     public function AddUserProfile($userProfile){
@@ -50,7 +50,7 @@ class UserProfileReposititory extends Reposititory implements IUserProfileReposi
     }
 
     public function SearchUser($key){
-        $key = "%".$key."%";
+        $key = $key;
         $modelIdName = "user_id";
         return $this->Search($key, $modelIdName);
     }

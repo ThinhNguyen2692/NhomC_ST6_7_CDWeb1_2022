@@ -37,11 +37,11 @@ class CustomerController extends Controller
         ]);
         
         $check = $this->busFeedback->sendFeedback($request);
-
+        $model = $this->busFood->GetFoodTen();
         if($check == true){
-            return View('welcome')->with("mess","Cảm ơn đã phản hồi");
+            return View('welcome')->with("mess","Cảm ơn đã phản hồi")->with('foods',$model);
         }else{
-            return View('welcome')->with("mess","Xin lỗi phản hồi thất bại");
+            return View('welcome')->with("mess","Xin lỗi phản hồi thất bại")->with('foods',$model);
         }
     }
     

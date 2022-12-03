@@ -19,13 +19,13 @@
                                             <table class="table table-borderless">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Action</th>                                               
-                                                        <th scope="col">Photo</th>
-                                                        <th scope="col">Product</th>
-                                                        <th scope="col">Qty</th>
-                                                        <th scope="col">Price</th>
-                                                        <th scope="col" class="text-right">Total</th>
+                                                        <th scope="col"></th>
+                                                        <th scope="col"></th>                                               
+                                                        <th scope="col">Hình</th>
+                                                        <th scope="col">Món ăn</th>
+                                                        <th scope="col">Số lượng</th>
+                                                        <th scope="col">Giá</th>
+                                                        <th scope="col" class="text-right">Tổng</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -34,7 +34,7 @@
                                                     @csrf
                                                 @foreach (Cart::content() as $item)
                                                     <tr>
-                                                        <th scope="row">1</th>
+                                                        <th scope="row"></th>
                                                         <td><a href="/deletecart?id={{$item->rowId}}" class="text-danger"><i class="ri-delete-bin-3-line"></i></a></td>
                                                         <td><img src="{{ asset('/images/'.$item->options->image. '') }}" class="img-fluid" width="35" alt="product"></td>
                                                         <td>{{$item->name}}</td>
@@ -56,7 +56,7 @@
                                         <div class="row">
                                             <div class="col-md-12 order-2 order-lg-1 col-lg-5 col-xl-6">
                                             <div class="cart-footer text-right">
-                                         <button type="submit" class="btn btn-info my-1"><i class="ri-save-line mr-2"></i>Update Cart</button>
+                                         <button type="submit" class="btn btn-info my-1"><i class="ri-save-line mr-2"></i>Cập nhật</button>
                                          </form>
                                          </div>
                                             </div>
@@ -67,7 +67,7 @@
                                                          
                                                         
                                                             <tr>
-                                                                <td class="f-w-7 font-18"><h4>Amount :</h4></td>
+                                                                <td class="f-w-7 font-18"><h4>Thanh toán :</h4></td>
                                                                 <td class="f-w-7 font-18"><h4>${{$total}}</h4></td>
                                                             </tr>
                                                         </tbody>
