@@ -36,5 +36,11 @@ class FeedbackTypeReposititory extends Reposititory implements IFeedbackTypeRepo
       }
     }
 
+    public function SearchFeedbackType($key){
+      $key = "%".$key."%";
+      $modelIdName = "feedback_type_name";
+      return $this->Search($key, $modelIdName);
+  }
+
 
 }

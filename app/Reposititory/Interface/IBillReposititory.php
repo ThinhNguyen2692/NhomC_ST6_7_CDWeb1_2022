@@ -9,4 +9,5 @@ interface IBillReposititory extends IReposititory{
     public function GetBillById($modelId);
     public function DeleteBill($modelId);
     public function UpdateBillstatus($model);
+    public function SearchBill($key);
 }

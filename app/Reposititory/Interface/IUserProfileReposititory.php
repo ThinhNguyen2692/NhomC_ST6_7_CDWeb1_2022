@@ -10,5 +10,6 @@ interface IUserProfileReposititory extends IReposititory{
     public function GetInformationUser($id);
     public function UpdateUser($User);
     public function DeleteUserProfile($modelId);
+    public function SearchUser($key);
     
 }

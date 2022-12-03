@@ -37,11 +37,11 @@ class BusFeedback implements IBusFeedback{
        return $TypeFeedback;
     }
 
-    public function GetFeedbackByUser($user_id, $postion){
+    public function GetFeedbackByUser($user_id, $postion,$status){
         if($postion == 3){
             $feedbackList = $this->feedbackReposititory->GetFeebackByType($user_id);
         }else{
-            $feedbackList = $this->feedbackReposititory->GetFeebackAll();
+            $feedbackList = $this->feedbackReposititory->GetFeebackAll($status);
         }
      return $feedbackList;
     }
@@ -54,7 +54,7 @@ class BusFeedback implements IBusFeedback{
     }
 
     public function DeletefeedbackType($feedbackTypeId){
-        $feedbackList = $this->feedbackReposititory->GetFeebackAll();
+        $feedbackList = $this->feedbackReposititory->GetFeebackAllCheck();
 
         foreach ($feedbackList as $item) {
             if($item->feedback_type_id == $feedbackTypeId){
@@ -104,6 +104,14 @@ public function sendEmail($reply,$content, $email, $customer_name){
     Mail::to($email)->send(new TestEmail($data));
    
 }
+
+public function SearchFeedback($key){
+    return $this->feedbackReposititory->SearchFeedback($key);
+}
+public function SearchFeedbackType($key){
+    return $this->feedbackTypeReposititory->SearchFeedbackType($key);   
+}
+
 
 }
 

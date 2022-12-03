@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Bus\Interface\IBusFood;
 use Cookie;
 use  App\Models\Food;
+use  App\Models\Bill;
+use  App\Models\BillDetail;
 
 class FoodController extends Controller
 {
@@ -15,8 +17,13 @@ class FoodController extends Controller
         $this->busFood = $busFood;
     }
 
-    public function Index(){
-        $viewModel = $this->busFood->GetListFood();
+    public function Index(Request $request){
+        if($request->get("key") !== null){
+            $key = $request->get("key");
+            $viewModel = $this->busFood->Search($key);
+        }else{
+            $viewModel = $this->busFood->GetListFood();
+        }
         return View("view-food")->with("foods",$viewModel);
     }
 
@@ -92,8 +99,14 @@ class FoodController extends Controller
     }
 
 
-    public function ViewBill(){
-        $viewModel = $this->busFood->GetBillAll();
+    public function ViewBill(Request $request){
+        if($request->get("key") !== null){
+            $key = $request->get("key");
+            $viewModel = $this->busFood->SearchBill($key);
+        }else{
+            $viewModel = $this->busFood->GetBillAll();
+        }
+        
         return View("view-bill")->with("bills",$viewModel);
     }
 
@@ -101,6 +114,10 @@ class FoodController extends Controller
         $id = $request->get("id");
         $bill = $this->busFood->GetBillById($id);
         $billDetail = $this->busFood->GetBillDetailById($id);
+        if(count($bill) == 0) {
+            $bill = array(new Bill());
+            $billDetail = array(new BillDetail());
+        }
         return View("view-bill-Detail")->with("bill",$bill)->with("billDetail",$billDetail);
     }
 
@@ -118,8 +135,8 @@ class FoodController extends Controller
         $key = $request->get("key");
         
         $viewModel = $this->busFood->Search($key);
-     //var_dump($viewModel);
-        return View('page-search')->with("foods",$viewModel);
+     var_dump($key);
+    return View('page-search')->with("foods",$viewModel)->with("key", $key);
     }
     
 }

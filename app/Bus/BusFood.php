@@ -192,4 +192,7 @@ class BusFood implements IBusFood{
     public function Search($key){
         return $this->foodReposititory->SearchFood($key);
     }
+    public function SearchBill($key){
+        return $this->billReposititory->SearchBill($key);   
+    }
 }

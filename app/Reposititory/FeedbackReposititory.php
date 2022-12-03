@@ -39,7 +39,13 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
         return $check;
     }
 
-    public function GetFeebackAll(){
+    public function GetFeebackAll($status){
+        return $this->model->join('feedback_type', 'feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
+        ->Where('feedback.status','=',$status)
+        ->paginate(2);
+    }
+
+    public function GetFeebackAllCheck(){
         return $this->model->join('feedback_type', 'feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
         ->get();
     }
@@ -47,13 +53,18 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
     public function GetFeebackByType($userId){
         return $this->model->join('feedback_type', 'feedback_type.feedback_type_id', '=', 'feedback.feedback_type_id')
         ->join('user_feedback','user_feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
-        ->where('user_feedback.user_id', '=', $userId)->get();
+        ->where('user_feedback.user_id', '=', $userId)->paginate(5);
     }
 
     public function UpdateFeedback($feedback){
         $modelIdName = "id";
         //var_dump($feedback["id"]);
        return $this->Update($feedback, $modelIdName, $feedback["id"]);
+    }
+    public function SearchFeedback($key){
+        $key = "%".$key."%";
+        $modelIdName = "customer_email";
+        return $this->Search($key, $modelIdName);
     }
 
 }

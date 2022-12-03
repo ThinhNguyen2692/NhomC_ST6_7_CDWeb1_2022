@@ -14,21 +14,33 @@ class FeedbackController extends Controller
     public function __construct(IBusFeedback $busFeedback){
         $this->busFeedback = $busFeedback;
     }
-    public function feedbackList(){
+    public function feedbackList(Request $request){
         $user_id = Cookie::get('user_id');
         $postion = Cookie::get('postion_id');
-        $feedbackList =  $this->busFeedback->GetFeedbackByUser($user_id,$postion);
-        return View('feedback-list')->with('feedbackList',$feedbackList)->with("status", 0);
+        if($request->get("key") !== null){
+            $key = $request->get("key");
+            $feedbackList = $this->busFeedback->SearchFeedback($key);
+        }else{
+            $feedbackList =  $this->busFeedback->GetFeedbackByUser($user_id,$postion,0);
+        }
+       
+        return View('feedback-list')->with('feedbackList',$feedbackList)->with("key","");
     }
     public function feedbackListhistory(){
         $user_id = Cookie::get('user_id');
         $postion =  Cookie::get('postion_id');
-        $feedbackList =  $this->busFeedback->GetFeedbackByUser($user_id,$postion);
-          return View('feedback-list')->with('feedbackList',$feedbackList)->with("status", 1);
+        $feedbackList =  $this->busFeedback->GetFeedbackByUser($user_id,$postion,1);
+          return View('feedback-list')->with('feedbackList',$feedbackList)->with("key","");
     }
 
-    public function addFeedbackType(){
-        $TypeFeedbacks = $this->busFeedback->GetAllTypeFeedback();
+    public function addFeedbackType(Request $request){
+        if($request->get("key") !== null){
+            $key = $request->get("key");
+            $TypeFeedbacks = $this->busFeedback->SearchFeedbackType($key);
+        }else{
+            $TypeFeedbacks = $this->busFeedback->GetAllTypeFeedback();
+        }
+       
         return View('add-feedback-type')->with('TypeFeedbacks',$TypeFeedbacks);
     }
 
@@ -67,24 +79,30 @@ class FeedbackController extends Controller
 
     public function Showfeedback(Request $request){
         $Feedback = $this->busFeedback->GetFeedbackbyId($request->get('id'));
-        if($Feedback != null){
+        if(count($Feedback) != 0){
             return View('reply-feedback')->with('Feedback',$Feedback);
         } else{
-            return redirect()->back();
+           
+            return to_route('feedback');
         }
     }
     public function DeleteFeedback(Request $request){
+        $token = md5(Cookie::get('user_id')."quananngon");
+        $user_id = $request->get("id");
+        if($token != $request->get("token")){
+            return redirect()->back();
+        }
         $Feedback = $this->busFeedback->GetFeedbackbyId($request->get('id'));
         if($Feedback != null){
            $delete = $this->busFeedback->DeleteFeeBack($request->get('id'));
-           $check = "";
+           $check = null;
            if($delete){
             $check = "Xóa thành công";
            }
            $user_id = Cookie::get('user_id');
            $postion = Cookie::get('postion_id');
-           $feedbackList =  $this->busFeedback->GetFeedbackByUser($user_id,$postion);
-           return View('feedback-list')->with('feedbackList',$feedbackList)->with("status", 0)->with('check', $check);
+           $feedbackList =  $this->busFeedback->GetFeedbackByUser($user_id,$postion, 0);
+           return View('feedback-list')->with('feedbackList',$feedbackList)->with('check', $check);
         } else{
             return redirect()->back();
         }

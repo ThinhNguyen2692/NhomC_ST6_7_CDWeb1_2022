@@ -7,4 +7,5 @@ interface IFeedbackTypeReposititory extends IReposititory{
     public function GetAll();
     public function AddFeedbackType($feedbackType);
     public function Deletefeedbacktype($modelId);
+    public function SearchFeedbackType($key);
 }

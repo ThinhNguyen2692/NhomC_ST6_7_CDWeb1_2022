@@ -11,4 +11,5 @@ interface IBusUser{
     public function UpdatePass($request, $user_id);
     public function UpdateUser($request);
     public function DeleteUser($modelId);
+    public function SearchUser($key);
 }

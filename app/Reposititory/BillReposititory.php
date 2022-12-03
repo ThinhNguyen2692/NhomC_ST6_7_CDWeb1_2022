@@ -48,9 +48,16 @@ class BillReposititory extends Reposititory implements IBillReposititory{
         return $check;
     }
 
+
      
     public function UpdateBillstatus($model){
         $modelIdName = "id_bill";
         $check = $this->Update($model,$modelIdName,$model["id_bill"]);
+    }
+
+    public function SearchBill($key){
+        $key = "%".$key."%";
+        $modelIdName = "phone";
+        return $this->Search($key, $modelIdName);
     }
 }

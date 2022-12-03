@@ -42,9 +42,10 @@
                 <div>
                     <button type="submit" class="btn btn-primary">Gửi</button>
                     <span><i class="fas fa-address-book" style="margin-left: 3%; cursor: pointer;"></i></span>
-                    <span><a href="/DeleteFeedback?id=<?php echo htmlentities($item->id)?>"><img src="{{ asset('/images/delete.png') }}" alt="" srcset="" style=" margin-left: 950px; width: 20px; height: 20px;"></a></span>
+                    <span><a onclick="return ConfirmDelete()"  href="/DeleteFeedback?id=<?php echo htmlentities($item->id)?>&token=<?php echo md5(Cookie::get('user_id')."quananngon")?>"><img src="{{ asset('/images/delete.png') }}" alt="" srcset="" style=" margin-left: 950px; width: 20px; height: 20px;"></a></span>
                 </div>
             </form>
+            
 
         </div>
 
@@ -52,4 +53,14 @@
     <?php
        }
     ?>
+<script>
+        function ConfirmDelete()
+        {
+     var x = confirm("Bạn chắc muốn xóa?");
+    if (x)
+        return true;
+      else
+    return false;
+        }
+    </script>
 </x-layou-admin>

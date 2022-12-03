@@ -5,6 +5,12 @@
         <p class="pb-5"></p>
     <div class="user-list-tile">
          <h1 class="text-center pt-5 pb-3">DANH SÁCH NHÂN VIÊN</h1>
+         <p> 
+            <form style="padding-right: 20px; padding-top: 12px;" class="d-flex" method="get" action="/employee-list" role="search"> 
+        <input class="form-control me-2" style=" width: 207px; height: 37px;" type="search" name="key" placeholder="Mã nhân viên" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
+        </form>
+    </p>
          <div class="user-list-tile-item">
          <button class="btn btn-danger"><a href="/add-user">Thêm</a></button>
      </div>
@@ -52,7 +58,34 @@
             </tbody>
         </table>
     </div>
-
+    <?php 
+                if(!isset($key)){
+                    $key = "";
+                 }
+        ?>
+        @if(count($users) != 0)
+                <div style="margin-top:20px;">
+                            <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                <a class="page-link" href="employee-list?key=<?php echo $key?>&page=1" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Đầu</span>
+                                </a>
+                                </li>
+                                @for($page = 1; $page <= $users->lastPage(); $page++)
+                                <li class="page-item <?php if($users->currentPage() == $page) echo "active";?>"><a class="page-link" href="employee-list?key=<?php echo $key?>&page=<?php echo $page?>">{{$page}}</a></li>
+                                @endfor
+                                <li class="page-item">
+                                <a class="page-link" href="employee-list?key=<?php echo $key?>&page=<?php echo $users->lastPage()?>" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Cuối</span>
+                                </a>
+                                </li>
+                            </ul>
+                            </nav>
+                    </div>
+                    @endif
 </div>
 <script>
         function ConfirmDelete()

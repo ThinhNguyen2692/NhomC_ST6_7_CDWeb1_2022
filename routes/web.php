@@ -30,23 +30,23 @@ Route::get('/add-Cart/{id?}/{name?}/{price?}/{quantity?}/{image?}', [CustomerCon
 
 Route::get('/dangnhapcuahang', [LoginController::class, 'Index']);
 Route::post('/login', [LoginController::class, 'Login']);
-Route::get('/feedback-list', [FeedbackController::class, 'feedbackList'])->name('feedback');
-Route::get('/feedback-list-history', [FeedbackController::class, 'feedbackListhistory'])->name('feedbackListhistory');
+Route::get('/feedback-list/{key?}', [FeedbackController::class, 'feedbackList'])->name('feedback');
+Route::get('/feedback-list-history/{key?}', [FeedbackController::class, 'feedbackListhistory'])->name('feedbackListhistory');
 Route::get('/user-password', [UserController::class, 'userPassword']);
 Route::get('/add-user', [UserController::class, 'addUser']);
 Route::get('/ShowUser/{id?}', [UserController::class, 'ShowUser']);
 
 
-Route::get('/add-feedback-type', [FeedbackController::class, 'addFeedbackType']);
+Route::get('/add-feedback-type/{key?}', [FeedbackController::class, 'addFeedbackType']);
 Route::get('/deletefeedbacktype/{id?}/{token?}', [FeedbackController::class, 'DeleteFeedbackType']);
 Route::get('/Showfeedback/{id?}', [FeedbackController::class, 'Showfeedback']);
-Route::get('/DeleteFeedback/{id?}', [FeedbackController::class, 'DeleteFeedback']);
+Route::get('/DeleteFeedback/{id?}/{token?}', [FeedbackController::class, 'DeleteFeedback']);
 Route::post('/traloiphanhoi', [FeedbackController::class, 'UpdateFeedback']);
 
 
 
 Route::post('/feedbacktypeadd', [FeedbackController::class, 'FeedbackTypeAdd']);
-Route::get('/employee-list', [UserController::class, 'employeeList']);
+Route::get('/employee-list/{key?}', [UserController::class, 'employeeList']);
 Route::get('/reply-feedback', [FeedbackController::class, 'replyFeedback']);
 Route::get('/ShowUser/{id?}', [UserController::class, 'ShowUser']);
 Route::get('/information', [UserController::class, 'InfomationUserLogin']);
@@ -65,7 +65,7 @@ Route::post('/addfood', [FoodController::class, 'AddFood']);
 Route::post('/updatefood', [FoodController::class, 'UpdateFood']);
 Route::get('/Showfood/{id?}', [FoodController::class, 'Showfood']);
 Route::get('/DeleteFood/{id?}/{token?}', [FoodController::class, 'DeleteFood']);
-Route::get('/view-bill', [FoodController::class, 'ViewBill']);
+Route::get('/view-bill/{key?}', [FoodController::class, 'ViewBill']);
 Route::get('/view-bill-detail/{id?}', [FoodController::class, 'ViewBillDetail']);
 Route::get('/DeleteBill/{id?}/{token?}', [FoodController::class, 'DeleteBill']);
 Route::get('/DeleteBill/{id?}/{token?}', [FoodController::class, 'DeleteBill']);

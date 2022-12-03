@@ -38,8 +38,13 @@ class UserController extends Controller
 
 
 
-    public function employeeList(){
+    public function employeeList(Request $request){
+        if($request->get("key") !== null){
+            $key = $request->get("key");
+            $GetUsers = $this->BusUser->SearchUser($key);
+        }else{
          $GetUsers = $this->BusUser->GetAllUser();
+        }
         return View('employee-list')->with("users", $GetUsers);
     }
 
@@ -109,8 +114,9 @@ class UserController extends Controller
 
     public function UpdateUser(Request $request){
         $request->validate([
-            'email' => 'required',
-            'phone' => 'required',
+            'full_name' => 'required',
+            'email' => ['required','email'],
+            'phone' => ['required','max:10','min:10'],
             'address' => 'required',
         ]);
         $this->BusUser->UpdateUser($request);

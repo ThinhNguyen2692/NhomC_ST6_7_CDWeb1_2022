@@ -7,9 +7,8 @@
     <title>Album example · Bootstrap v5.2</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+   
 <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -173,25 +172,20 @@ background-color: #eee;
         -webkit-overflow-scrolling: touch;
         
       }
-      html,
-body {
-   margin:0;
-   padding:0;
-   height:100%;
-}
 .banner-search{
   z-index: -100;
 }
-#container {
-   min-height:100%;
-   position:relative;
+
+footer{
+  margin-top: 200px;
 }
+
 .search-header{
   display: inline-block;
 }
 
-#codepro-ads-left {top: 100px;left: 10px;position: fixed;}
-    #codepro_ads_right {top: 100px;right: 10px;position: fixed;}
+#codepro-ads-left {top: 350px;left: 10px;position: fixed;}
+    #codepro_ads_right {top: 350px;right: 10px;position: fixed;}
     @media(max-width: 1024px) {.codepro-ads-all {display: none!important}}
 
 
@@ -205,7 +199,7 @@ body {
  
     <div class="container">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
+      <div class="container-fluid">
      
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -219,8 +213,7 @@ body {
          
           </li>
         </ul>
-        <form style="padding-right: 20px; padding-top: 12px;" class="d-flex" method="get" action="/view-search" role="search">
-        @csrf  
+        <form style="padding-right: 20px; padding-top: 12px;" class="d-flex" method="get" action="/view-search" role="search"> 
         <input class="form-control me-2" style=" width: 207px; height: 37px;" type="search" name="key" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
         </form>
@@ -234,6 +227,8 @@ body {
 </header>
     <!-- <div class="container"> -->
     {{ $slot }}
+
+   
     <!-- </div> -->
     <footer class="text-muted py-5">
   <div class="container">

@@ -20,4 +20,5 @@ interface IBusFood{
     public function DeleteBill($id);
     public function UpdateBill($id);
     public function Search($key);
+    public function SearchBill($key);
 }

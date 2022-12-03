@@ -127,4 +127,8 @@ class BusUser implements IBusUser{
 
     }
 
+    public function SearchUser($key){
+      return  $this->userProfileReposititory->SearchUser($key);
+    }
+
 }
