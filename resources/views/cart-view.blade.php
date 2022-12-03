@@ -1,6 +1,6 @@
 <x-layout-home>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
-<div class="container">                
+<div class="container" style="margin-top: 100px;">                
 <div class="contentbar">                
         <!-- Start row -->
         <div class="row">

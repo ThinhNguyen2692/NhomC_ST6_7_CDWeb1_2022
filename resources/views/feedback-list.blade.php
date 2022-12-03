@@ -28,7 +28,10 @@
             </thead>
             <tbody>
                 <?php 
-                    foreach ($feedbackList as $item) { ?>
+                    foreach ($feedbackList as $item) { 
+                       if($item->status == 0) $url = "/feedback-list"; 
+                       else $url = "/feedback-list-history";
+                        ?>
                    
                 <tr>
                     <td><?php echo htmlentities($item->customer_name)?></td>
@@ -55,16 +58,16 @@
                             <nav aria-label="Page navigation example">
                             <ul class="pagination">
                                 <li class="page-item">
-                                <a class="page-link" href="feedback-list?key=<?php echo $key?>&page=1" aria-label="Previous">
+                                <a class="page-link" href="{{$url}}?key=<?php echo $key?>&page=1" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                     <span class="sr-only">Đầu</span>
                                 </a>
                                 </li>
                                 @for($page = 1; $page <= $feedbackList->lastPage(); $page++)
-                                <li class="page-item <?php if($feedbackList->currentPage() == $page) echo "active";?>"><a class="page-link" href="feedback-list?key=<?php echo $key?>&page=<?php echo $page?>">{{$page}}</a></li>
+                                <li class="page-item <?php if($feedbackList->currentPage() == $page) echo "active";?>"><a class="page-link" href="{{$url}}?key=<?php echo $key?>&page=<?php echo $page?>">{{$page}}</a></li>
                                 @endfor
                                 <li class="page-item">
-                                <a class="page-link" href="feedback-list?key=<?php echo $key?>&page=<?php echo $feedbackList->lastPage()?>" aria-label="Next">
+                                <a class="page-link" href="{{$url}}?key=<?php echo $key?>&page=<?php echo $feedbackList->lastPage()?>" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                     <span class="sr-only">Cuối</span>
                                 </a>

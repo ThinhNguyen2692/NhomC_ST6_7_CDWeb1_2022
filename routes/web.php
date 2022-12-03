@@ -26,7 +26,7 @@ Route::post('/UpdateCart', [CustomerController::class, 'UpdateCart']);
 Route::post('/AddBill', [CustomerController::class, 'AddBill']);
 Route::get('/deletecart/{id?}', [CustomerController::class, 'Deletecart']);
 Route::get('/add-Cart/{id?}/{name?}/{price?}/{quantity?}/{image?}', [CustomerController::class, 'Cart']);
-
+Route::get('/pay', [CustomerController::class, 'pay']);
 
 Route::get('/dangnhapcuahang', [LoginController::class, 'Index']);
 Route::post('/login', [LoginController::class, 'Login']);
@@ -58,7 +58,7 @@ Route::post('/UpdateUser', [UserController::class, 'UpdateUser']);
 Route::get('/delete/{id?}/{token?}', [UserController::class, 'DeleteUser']);
 
 
-Route::get('/view-food', [FoodController::class, 'Index']);
+Route::get('/view-food', [FoodController::class, 'Index'])->name('list-food');
 Route::get('/view-search', [FoodController::class, 'ViewSearch']);
 Route::get('/View-add-food', [FoodController::class, 'AddViewFood']);
 Route::post('/addfood', [FoodController::class, 'AddFood']);

@@ -218,6 +218,9 @@ footer{
           <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
         </form>
         <a style="color:#fff;" href="/ViewCart"><button style="color:#fff;" type="button" class="btn btn-sm btn-outline-secondary">Giỏ hàng</button></a>
+        @if(Cookie::get('bill') !== null)
+        <a style="color:#fff;" href="/pay"><button style="color:#fff;" type="button" class="btn btn-sm btn-outline-secondary">Hóa đơn chưa thanh toán</button></a>
+        @endif
       </div>
     </div>
   </nav>

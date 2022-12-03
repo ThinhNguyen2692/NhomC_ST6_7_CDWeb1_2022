@@ -53,7 +53,7 @@ class FeedbackReposititory extends Reposititory implements IFeedbackReposititory
     public function GetFeebackByType($userId){
         return $this->model->join('feedback_type', 'feedback_type.feedback_type_id', '=', 'feedback.feedback_type_id')
         ->join('user_feedback','user_feedback.feedback_type_id', '=', 'feedback_type.feedback_type_id')
-        ->where('user_feedback.user_id', '=', $userId)->paginate(5);
+        ->where('user_feedback.user_id', '=', $userId)->paginate(2);
     }
 
     public function UpdateFeedback($feedback){

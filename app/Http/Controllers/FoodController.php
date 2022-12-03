@@ -95,7 +95,8 @@ class FoodController extends Controller
         
        $mess = $this->busFood->DeleteFood($id);
        $viewModel = $this->busFood->GetListFood();
-        return View("view-food")->with("foods",$viewModel)->with('mess', $mess);
+       return to_route('list-food');
+        //return View("view-food")->with("foods",$viewModel)->with('mess', $mess);
     }
 
 

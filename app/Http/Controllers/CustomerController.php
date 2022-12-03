@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Bus\Interface\IBusFeedback;
 use  App\Models\Food;
 use App\Bus\Interface\IBusFood;
+use Illuminate\Support\Facades\Cookie;
 
 
 class CustomerController extends Controller
@@ -78,7 +79,7 @@ class CustomerController extends Controller
         ]);
 
         $idBill = $this->busFood->AddBill($request);
-
+        cookie::queue('bill', $idBill, 30);
         $bill = $this->busFood->GetBillById($idBill);
         $billDetail = $this->busFood->GetBillDetailById($idBill);
         return View('paypal')->with('bill',$bill)->with('billDetail',$billDetail);
@@ -87,7 +88,15 @@ class CustomerController extends Controller
     public function UpdateBill(Request $request){
         $id = $request->get('id');
         $this->busFood->UpdateBill($id);
-        return to_route('home');
+        $cookieBill =  \Cookie::forget('bill');
+        return to_route('home')->withCookie($cookieBill);
+    }
+
+    public function pay(){
+        $idBill = cookie::get('bill');
+        $bill = $this->busFood->GetBillById($idBill);
+        $billDetail = $this->busFood->GetBillDetailById($idBill);
+        return View('paypal')->with('bill',$bill)->with('billDetail',$billDetail);
     }
 
 }
