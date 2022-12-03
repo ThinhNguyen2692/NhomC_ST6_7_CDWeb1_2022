@@ -80,11 +80,12 @@
 <header>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
+      <a href="/" class="navbar-brand d-flex align-items-center">
       <img width="70px" height="50px" src="https://laravel.com/img/logomark.min.svg"    
         <strong>Album</strong>
       </a>
-     
+      <a style="color:#fff;" href="/ViewCart"><button style="color:#fff;" type="button" class="btn btn-sm btn-outline-secondary">Giỏ hàng</button></a>
+
     </div>
   </div>
 </header>

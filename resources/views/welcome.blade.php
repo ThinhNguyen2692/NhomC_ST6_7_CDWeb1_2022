@@ -25,10 +25,11 @@
             <img src="{{ asset('/images/'.$item->food_Image. '') }}" width="100%" height="225" alt="">
             <div class="card-body">
               <p class="card-text"><?php echo htmlentities($item->food_name); ?></p>
+              <p class="card-text">$<?php echo htmlentities($item->food_price); ?></p>
               <p><?php echo htmlentities($item->food_description); ?></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Thêm Giỏ hàng</button>
+                  <a href="/add-Cart?id=<?php echo htmlentities($item->id); ?>&name=<?php echo htmlentities($item->food_name);?>&price=<?php echo htmlentities($item->food_price);?>&quantity=1&image=<?php echo htmlentities($item->food_Image);?>"><button type="button" class="btn btn-sm btn-outline-secondary">Thêm Giỏ hàng</button></a>
                 </div>
                 <small class="text-muted">9 mins</small>
               </div>

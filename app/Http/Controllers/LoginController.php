@@ -46,7 +46,7 @@ class LoginController extends Controller
          $cookiePostion =  \Cookie::forget('postion_id');
          $cookieStatus = \Cookie::forget('status');
           $cookieAvatar =  \Cookie::forget('avatar');
-        return response(View('welcome'))
+        return response(View('Login'))
         ->withCookie($cookieUser)
         ->withCookie($cookieLogin)
         ->withCookie($cookieFullname)

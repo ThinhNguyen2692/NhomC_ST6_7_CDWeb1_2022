@@ -91,5 +91,27 @@ class FoodController extends Controller
         return View("view-food")->with("foods",$viewModel)->with('mess', $mess);
     }
 
+
+    public function ViewBill(){
+        $viewModel = $this->busFood->GetBillAll();
+        return View("view-bill")->with("bills",$viewModel);
+    }
+
+    public function ViewBillDetail(Request $request){
+        $id = $request->get("id");
+        $bill = $this->busFood->GetBillById($id);
+        $billDetail = $this->busFood->GetBillDetailById($id);
+        return View("view-bill-Detail")->with("bill",$bill)->with("billDetail",$billDetail);
+    }
+
+    public function DeleteBill(Request $request){
+        $token = md5(Cookie::get('user_id')."quananngon");
+        $id = $request->get("id");
+        if($token != $request->get("token") ){
+            return redirect()->back();
+        }
+        $this->busFood->DeleteBill($id);
+        return redirect()->back();
+    }
     
 }

@@ -49,9 +49,30 @@ class CustomerController extends Controller
         return response()->json(['captcha'=> captcha_img('math')]);
     }
 
-    public function Cart(){
-        $this->busFood->Cart(1,1);
-        
+    public function Cart(Request $request){
+        $this->busFood->Cart($request);
+        return redirect()->back();
     }
 
+    public function ViewCart(){
+        $this->busFood->UpdateCartDB();
+        return View('cart-view');
+    }
+    public function Deletecart(Request $request){
+        $this->busFood->Deletecart($request);
+        return redirect()->back();
+    }
+
+    public function UpdateCart(Request $request){
+       $this->busFood->UpdateCart($request);
+        return redirect()->back();
+      
+    }
+
+
+    public function AddBill(Request $request){
+        $idBill = $this->busFood->AddBill($request);
+        $model = $this->busFood->GetFoodTen();
+        return View('welcome')->with('foods',$model);
+    }
 }

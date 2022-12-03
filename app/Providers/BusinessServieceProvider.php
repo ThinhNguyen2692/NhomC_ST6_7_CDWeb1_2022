@@ -10,6 +10,7 @@ use App\Bus\Interface\IBusFood;
 use App\Bus\BusUser;
 use App\Bus\BusFeedback;
 use App\Bus\BusFood;
+use App\Bus\BusLogin;
 
 class BusinessServieceProvider extends ServiceProvider
 {

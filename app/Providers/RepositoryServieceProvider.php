@@ -11,12 +11,16 @@ use App\Reposititory\Interface\IFeedbackTypeReposititory;
 use App\Reposititory\Interface\IUserFeedbackReposititory;
 use App\Reposititory\Interface\IFeedbackReposititory;
 use App\Reposititory\Interface\IFoodReposititory;
+use App\Reposititory\Interface\IBillDetailReposititory;
+use App\Reposititory\Interface\IBillReposititory;
 use App\Reposititory\UserReposititory;
 use App\Reposititory\UserProfileReposititory;
 use App\Reposititory\FeedbackTypeReposititory;
 use App\Reposititory\UserFeedbackReposititory;
 use App\Reposititory\FeedbackReposititory;
 use App\Reposititory\FoodReposititory;
+use App\Reposititory\BillDetailReposititory;
+use App\Reposititory\BillReposititory;
 
 
 
@@ -36,6 +40,8 @@ class RepositoryServieceProvider extends ServiceProvider
         $this->app->singleton(IUserFeedbackReposititory::class, UserFeedbackReposititory::class);
         $this->app->singleton(IFeedbackReposititory::class, FeedbackReposititory::class);
         $this->app->singleton(IFoodReposititory::class, FoodReposititory::class);
+        $this->app->singleton(IBillDetailReposititory::class, BillDetailReposititory::class);
+        $this->app->singleton(IBillReposititory::class, BillReposititory::class);
     }
 
     /**

@@ -38,6 +38,12 @@
                     Món ăn
                 </a>
             </li>
+            <li>
+                <a href="/view-bill">
+                    <span><i class="fas fa-address-book"></i></span>
+                    Đơn hàng online
+                </a>
+            </li>
             
             <?php } ?>
         
