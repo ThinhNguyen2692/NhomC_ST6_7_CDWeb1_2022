@@ -9,5 +9,6 @@ interface IFoodReposititory extends IReposititory{
     public function UpdateFood($modelNew);
     public function DeleteFood($id);
     public function GetFoodTen();
+    public function SearchFood($key);
 
 }

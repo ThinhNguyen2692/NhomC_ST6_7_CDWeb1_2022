@@ -47,4 +47,10 @@ class BillReposititory extends Reposititory implements IBillReposititory{
         $check = $this->Delete($modelId,$modelIdName);
         return $check;
     }
+
+     
+    public function UpdateBillstatus($model){
+        $modelIdName = "id_bill";
+        $check = $this->Update($model,$modelIdName,$model["id_bill"]);
+    }
 }

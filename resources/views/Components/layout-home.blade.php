@@ -7,19 +7,121 @@
     <title>Album example · Bootstrap v5.2</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+<link rel="manifest" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/manifest.json">
 <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
 <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#712cf9">
 
 
     <style>
+      body{margin-top:20px;
+background-color: #eee;
+}
+
+.search-result-categories>li>a {
+    color: #b6b6b6;
+    font-weight: 400
+}
+
+.search-result-categories>li>a:hover {
+    background-color: #ddd;
+    color: #555
+}
+
+.search-result-categories>li>a>.glyphicon {
+    margin-right: 5px
+}
+
+.search-result-categories>li>a>.badge {
+    float: right
+}
+
+.search-results-count {
+    margin-top: 10px
+}
+
+.search-result-item {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px
+}
+
+.search-result-item:after,
+.search-result-item:before {
+    content: " ";
+    display: table
+}
+
+.search-result-item:after {
+    clear: both
+}
+
+.search-result-item .image-link {
+    display: block;
+    overflow: hidden;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px
+}
+
+@media (min-width:768px) {
+    .search-result-item .image-link {
+        display: inline-block;
+        margin: -20px 0 -20px -20px;
+        float: left;
+        width: 200px
+    }
+}
+
+@media (max-width:767px) {
+    .search-result-item .image-link {
+        max-height: 200px
+    }
+}
+
+.search-result-item .image {
+    max-width: 100%
+}
+
+.search-result-item .info {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #999
+}
+
+.search-result-item .description {
+    font-size: 13px
+}
+
+.search-result-item+.search-result-item {
+    margin-top: 20px
+}
+
+@media (min-width:768px) {
+    .search-result-item-body {
+        margin-left: 200px
+    }
+}
+
+.search-result-item-heading {
+    font-weight: 400
+}
+
+.search-result-item-heading>a {
+    color: #555
+}
+
+@media (min-width:768px) {
+    .search-result-item-heading {
+        margin: 0
+    }
+}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -71,6 +173,28 @@
         -webkit-overflow-scrolling: touch;
         
       }
+      html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+.banner-search{
+  z-index: -100;
+}
+#container {
+   min-height:100%;
+   position:relative;
+}
+.search-header{
+  display: inline-block;
+}
+
+#codepro-ads-left {top: 100px;left: 10px;position: fixed;}
+    #codepro_ads_right {top: 100px;right: 10px;position: fixed;}
+    @media(max-width: 1024px) {.codepro-ads-all {display: none!important}}
+
+
     </style>
 
     
@@ -78,16 +202,35 @@
   <body>
     
 <header>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
+ 
     <div class="container">
-      <a href="/" class="navbar-brand d-flex align-items-center">
-      <img width="70px" height="50px" src="https://laravel.com/img/logomark.min.svg"    
-        <strong>Album</strong>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+     
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+          <a href="/" class="navbar-brand d-flex align-items-center">
+      <img width="70px" height="50px" src="https://laravel.com/img/logomark.min.svg"/>
+        <strong> Album</strong>
       </a>
-      <a style="color:#fff;" href="/ViewCart"><button style="color:#fff;" type="button" class="btn btn-sm btn-outline-secondary">Giỏ hàng</button></a>
-
+          </li>
+          <li class="nav-item">
+         
+          </li>
+        </ul>
+        <form style="padding-right: 20px; padding-top: 12px;" class="d-flex" method="get" action="/view-search" role="search">
+        @csrf  
+        <input class="form-control me-2" style=" width: 207px; height: 37px;" type="search" name="key" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
+        </form>
+        <a style="color:#fff;" href="/ViewCart"><button style="color:#fff;" type="button" class="btn btn-sm btn-outline-secondary">Giỏ hàng</button></a>
+      </div>
     </div>
-  </div>
+  </nav>
+     
+    </div>
+
 </header>
     <!-- <div class="container"> -->
     {{ $slot }}

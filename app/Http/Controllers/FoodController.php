@@ -113,5 +113,13 @@ class FoodController extends Controller
         $this->busFood->DeleteBill($id);
         return redirect()->back();
     }
+
+    public function ViewSearch(Request $request){
+        $key = $request->get("key");
+        
+        $viewModel = $this->busFood->Search($key);
+     //var_dump($viewModel);
+        return View('page-search')->with("foods",$viewModel);
+    }
     
 }

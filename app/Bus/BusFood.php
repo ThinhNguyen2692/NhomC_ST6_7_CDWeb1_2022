@@ -143,7 +143,7 @@ class BusFood implements IBusFood{
          }
          $this->billReposititory->UpdateBill($bill->toArray());
          Cart::destroy();
-         return $bill->id;
+         return $bill->id_bill;
     }
    
     function generateRandomString($length = 10) {
@@ -169,5 +169,27 @@ class BusFood implements IBusFood{
     public function DeleteBill($id){
         $this->billDetailReposititory->DeleteBillDetail($id);
         $this->billReposititory->DeleteBill($id);
+    }
+
+    public function UpdateBill($id){
+        $model = $this->GetBillById($id);
+        $modelNew = new Bill();
+        $modelNew = $model[0];
+        $modelNew->status = 1;
+        $modelNew->updated_at = null;
+        $this->billReposititory->UpdateBillstatus($modelNew->toArray());
+    }
+
+    public function GetToday(){
+        $month = date('m');
+        $day = date('d');
+        $year = date('Y');
+        
+        $today = $year . '-' . $month . '-' . $day;
+        return $today;
+    }
+
+    public function Search($key){
+        return $this->foodReposititory->SearchFood($key);
     }
 }

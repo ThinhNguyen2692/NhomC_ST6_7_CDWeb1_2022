@@ -18,7 +18,7 @@ use App\Http\Controllers\FoodController;
 */
 
 
-Route::get('/', [CustomerController::class, 'index']);
+Route::get('/', [CustomerController::class, 'index'])->name('home');
 Route::post('/guiphanhoiquanan', [CustomerController::class, 'SendFeedback']);
 Route::get('/reloadCaptcha', [CustomerController::class, 'reloadCaptcha']);
 Route::get('/ViewCart', [CustomerController::class, 'ViewCart']);
@@ -59,6 +59,7 @@ Route::get('/delete/{id?}/{token?}', [UserController::class, 'DeleteUser']);
 
 
 Route::get('/view-food', [FoodController::class, 'Index']);
+Route::get('/view-search', [FoodController::class, 'ViewSearch']);
 Route::get('/View-add-food', [FoodController::class, 'AddViewFood']);
 Route::post('/addfood', [FoodController::class, 'AddFood']);
 Route::post('/updatefood', [FoodController::class, 'UpdateFood']);
@@ -67,3 +68,13 @@ Route::get('/DeleteFood/{id?}/{token?}', [FoodController::class, 'DeleteFood']);
 Route::get('/view-bill', [FoodController::class, 'ViewBill']);
 Route::get('/view-bill-detail/{id?}', [FoodController::class, 'ViewBillDetail']);
 Route::get('/DeleteBill/{id?}/{token?}', [FoodController::class, 'DeleteBill']);
+Route::get('/DeleteBill/{id?}/{token?}', [FoodController::class, 'DeleteBill']);
+
+
+
+Route::get('/UpdateBill/{id?}', [CustomerController::class, 'UpdateBill']);
+
+
+Route::get('/checkout', [FoodController::class, 'CheckOut']);
+
+

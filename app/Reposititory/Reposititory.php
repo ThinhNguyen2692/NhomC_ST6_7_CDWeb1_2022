@@ -38,4 +38,8 @@ class Reposititory implements IReposititory{
          return $model->update($modelNew);
     }
     
+    public function Search($key, $modelIdName){
+        return  $this->model::where($modelIdName, 'like', $key)->paginate(1); 
+    }
+
 }

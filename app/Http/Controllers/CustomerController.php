@@ -69,10 +69,25 @@ class CustomerController extends Controller
       
     }
 
-
     public function AddBill(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'phone' => ['required'],
+            'name' => 'required',
+            'address' => 'required'
+        ]);
+
         $idBill = $this->busFood->AddBill($request);
-        $model = $this->busFood->GetFoodTen();
-        return View('welcome')->with('foods',$model);
+
+        $bill = $this->busFood->GetBillById($idBill);
+        $billDetail = $this->busFood->GetBillDetailById($idBill);
+        return View('paypal')->with('bill',$bill)->with('billDetail',$billDetail);
     }
+
+    public function UpdateBill(Request $request){
+        $id = $request->get('id');
+        $this->busFood->UpdateBill($id);
+        return to_route('home');
+    }
+
 }
